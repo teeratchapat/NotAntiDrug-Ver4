@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Platform
+  - Enemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ground
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: oldMap
+    uniqueID: 1542179935
+    locked: 0
+  - name: IndoorBGTile
+    uniqueID: 952712505
+    locked: 0
+  - name: IndoorTile
+    uniqueID: 2612147733
+    locked: 0
+  - name: IndoorTile_1
+    uniqueID: 1346665435
+    locked: 0
+  - name: WolrdTile
+    uniqueID: 2863410561
+    locked: 0
+  - name: ForegroundTile
+    uniqueID: 1759179317
+    locked: 0
