@@ -131,8 +131,8 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         else
-        {
-            AudioManager.instance.PlaySfx(5);
+        { 
+            AudioManager.instance.PlaySfx(14);
             anim.SetBool("isHurt", true);
             knockbackTimeCounter -= Time.deltaTime;
             if (isTurnRight)
@@ -164,14 +164,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGround)
         {
-            AudioManager.instance.PlaySfx(3);
+            AudioManager.instance.PlaySfx(7);
             playerRigidbody2d.velocity = new Vector2(playerRigidbody2d.velocity.x, jumpForce);
         }
         else
         {
             if (isCanDoubleJump)
             {
-                AudioManager.instance.PlaySfx(3);
+                AudioManager.instance.PlaySfx(7);
                 playerRigidbody2d.velocity = new Vector2(playerRigidbody2d.velocity.x, jumpForce);
                 isCanDoubleJump = false;
             }

@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 1064304696418719161}
   - component: {fileID: 1064304696418719160}
   - component: {fileID: 1264663990448743594}
+  - component: {fileID: 30591964943424152}
+  - component: {fileID: 2948088815779539670}
+  - component: {fileID: 90766660877755757}
   m_Layer: 0
   m_Name: MagicMushroom
   m_TagString: Untagged
@@ -70,10 +73,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 483404209
-  m_SortingLayer: 6
+  m_SortingLayerID: -1651470603
+  m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4417737597250245621, guid: d99baabd2e030d14c9ce226e5ed0934c, type: 3}
+  m_Sprite: {fileID: 4417737597250245621, guid: 7165b31128b97e448847a95c519c6560, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,7 +97,7 @@ Animator:
   m_GameObject: {fileID: 1064304696418719163}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f58fe09621725e7489c228a66928ed22, type: 2}
+  m_Controller: {fileID: 9100000, guid: ca13efa8c9786b24cb8aee35ed550d8e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -129,3 +132,49 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5449352, y: 1.2192684}
   m_EdgeRadius: 0
+--- !u!114 &30591964943424152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064304696418719163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d87be7968286a04aa86a99eb601b8cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptableEnemy: {fileID: 0}
+  hpBarHolder: {fileID: 0}
+  enemyHp: 0
+  hpPercentage: 1
+--- !u!114 &2948088815779539670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064304696418719163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc3587a9754b6f41bfaa88a09b923dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  offset: 0.2
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &90766660877755757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064304696418719163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0d4ebc8a5047949bc23a6f01619915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1

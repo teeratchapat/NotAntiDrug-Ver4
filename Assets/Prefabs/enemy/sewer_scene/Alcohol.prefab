@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7635876532006292409}
   - component: {fileID: 2712413928336305156}
   - component: {fileID: 7148912041255727491}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,10 +87,10 @@ GameObject:
   - component: {fileID: 1634742641361743748}
   - component: {fileID: 1634742641361743747}
   - component: {fileID: 9123703281346856885}
-  - component: {fileID: -7434572981427742225}
-  - component: {fileID: 3782869227706655947}
   - component: {fileID: -6268159176983715813}
-  - component: {fileID: -2359410974820795488}
+  - component: {fileID: -7434572981427742225}
+  - component: {fileID: 6826866750723397133}
+  - component: {fileID: 1860828779217271199}
   m_Layer: 9
   m_Name: Alcohol
   m_TagString: Enemy
@@ -150,15 +150,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 483404209
+  m_SortingLayerID: -1651470603
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9086870433655771597, guid: 3ae3091305e18e84f9d8f3d4e0f0b981, type: 3}
+  m_Sprite: {fileID: -9086870433655771597, guid: fa948c036d118cb43a4e80d1c6e5ab91, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1.1428572, y: 2.2857144}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -174,7 +174,7 @@ Animator:
   m_GameObject: {fileID: 1634742641361743746}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 40ec793c9f3307d4089a2aceea4681b7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 6af4567dd8ee4444a810678e857b9f60, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -201,7 +201,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.1428572, y: 2.2857144}
-    newSize: {x: 1, y: 2}
+    newSize: {x: 1.1428572, y: 2.2857144}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -209,39 +209,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0407292, y: 1.7370831}
   m_EdgeRadius: 0
---- !u!114 &-7434572981427742225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1634742641361743746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a13e22ca0231c994d9b14e91226879b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptableEnemy: {fileID: 11400000, guid: 3f0745f4944faf6479f0fe877888aa6d, type: 2}
-  hpBarHolder: {fileID: 8041782397826732025}
-  enemyHp: 0
-  hpPercentage: 1
---- !u!114 &3782869227706655947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1634742641361743746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6df6d135d9d5774c9365d095ca42ba8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  offset: 0.2
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 1024
 --- !u!50 &-6268159176983715813
 Rigidbody2D:
   serializedVersion: 4
@@ -258,12 +225,12 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: c84e2486a3b92f946add9b685a6217d8, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-2359410974820795488
+--- !u!114 &-7434572981427742225
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -272,10 +239,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 1634742641361743746}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 988e802b742983647ab045de65d82631, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d87be7968286a04aa86a99eb601b8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  scriptableEnemy: {fileID: 11400000, guid: eea63c427e52b174fb3e0064a6b95539, type: 2}
+  hpBarHolder: {fileID: 8041782397826732025}
+  enemyHp: 0
+  hpPercentage: 1
+--- !u!114 &6826866750723397133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634742641361743746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc3587a9754b6f41bfaa88a09b923dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2.5
+  offset: 0.2
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &1860828779217271199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634742641361743746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0d4ebc8a5047949bc23a6f01619915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1 &3208304685182220550
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 2228640080632228682}
   - component: {fileID: 1370223606020550200}
   - component: {fileID: 5794441048290266706}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: HpBarCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,7 +359,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
 --- !u!114 &5794441048290266706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,7 +385,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8041782397826732025}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +423,7 @@ GameObject:
   - component: {fileID: 4733522596525372866}
   - component: {fileID: 995064131616653316}
   - component: {fileID: 8792190934680754805}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: MaxHpBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

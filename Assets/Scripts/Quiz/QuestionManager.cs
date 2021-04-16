@@ -125,7 +125,7 @@ public class QuestionManager : MonoBehaviour
             EndQuiz();
         } else if (timeLeft <= timeToNotice)
         {
-            AudioManager.instance.PlaySfx(2);
+            AudioManager.instance.PlaySfx(17);
         }
     }
 
@@ -198,7 +198,7 @@ public class QuestionManager : MonoBehaviour
         if(answer == keyIndex)
         {
             Debug.Log("correct answer");
-            AudioManager.instance.PlaySfx(0);
+            AudioManager.instance.PlaySfx(10);
             //show icon
             correctIcon.SetActive(true);
             //add score
@@ -226,7 +226,7 @@ public class QuestionManager : MonoBehaviour
         {
             //redure score
             FindObjectOfType<scoreManager>().reduceScore(scoreToRedure);
-            AudioManager.instance.PlaySfx(1);
+            AudioManager.instance.PlaySfx(11);
             //show icon
             incorrectIcon.SetActive(true);
             //show right answer

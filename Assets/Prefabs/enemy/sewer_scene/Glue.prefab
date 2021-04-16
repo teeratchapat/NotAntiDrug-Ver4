@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2227240700465518188}
   - component: {fileID: 8334103015304104109}
   - component: {fileID: 1151164422803984148}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: HpBarCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
 --- !u!114 &1151164422803984148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,7 +109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3241177007795563306}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,15 +211,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 483404209
+  m_SortingLayerID: -1651470603
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: -543450662016496787, guid: baa5476ad5789d64ca2bb2c1d3fb1e5d, type: 3}
+  m_Sprite: {fileID: -543450662016496787, guid: 14e11ad13e47ec445afc2097d8ae72e0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.9846154, y: 1.9692308}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -236,7 +235,7 @@ Animator:
   m_GameObject: {fileID: 5891008013792599217}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f9d0d96c4d75cb94aa5a08e9b981897c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 400d37d92d2e4b04bab81f122442643f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -263,7 +262,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.9846154, y: 1.9692308}
-    newSize: {x: 1, y: 2}
+    newSize: {x: 0.9846154, y: 1.9692308}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -280,10 +279,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5891008013792599217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a13e22ca0231c994d9b14e91226879b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d87be7968286a04aa86a99eb601b8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptableEnemy: {fileID: 11400000, guid: 8341fd8a9eef0034d8f911236ce4cc5f, type: 2}
+  scriptableEnemy: {fileID: 11400000, guid: 21acd848b7929ed4a9a27973defc481d, type: 2}
   hpBarHolder: {fileID: 3241177007795563306}
   enemyHp: 0
   hpPercentage: 1
@@ -296,14 +295,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5891008013792599217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6df6d135d9d5774c9365d095ca42ba8, type: 3}
+  m_Script: {fileID: 11500000, guid: fcc3587a9754b6f41bfaa88a09b923dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   offset: 0.2
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 256
 --- !u!114 &-7877263543654302653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,10 +312,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5891008013792599217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 988e802b742983647ab045de65d82631, type: 3}
+  m_Script: {fileID: 11500000, guid: af0d4ebc8a5047949bc23a6f01619915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 15
 --- !u!50 &-7851684539573372435
 Rigidbody2D:
   serializedVersion: 4
@@ -349,7 +348,7 @@ GameObject:
   - component: {fileID: 5170072842487161405}
   - component: {fileID: 7313746383488942497}
   - component: {fileID: 4963246953715084005}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +423,7 @@ GameObject:
   - component: {fileID: 1133900305439928836}
   - component: {fileID: 9144993044900567611}
   - component: {fileID: 3892653624395078414}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: MaxHpBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
