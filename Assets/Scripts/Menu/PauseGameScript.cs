@@ -12,7 +12,12 @@ public class PauseGameScript : MonoBehaviour
 
     public string mainmenuScene;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        isPause = false;
+        Time.timeScale = 1f;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
 
         spriteRendererPlayer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        FindObjectOfType<HPbarUI>().updateHpUI();
+        //FindObjectOfType<HPbarUI>().updateHpUI();
 
         NormalColor = new Color(spriteRendererPlayer.color.r, spriteRendererPlayer.color.g, spriteRendererPlayer.color.b, 1f);
         FlashColor = new Color(spriteRendererPlayer.color.r, spriteRendererPlayer.color.g, spriteRendererPlayer.color.b, 0.5f);

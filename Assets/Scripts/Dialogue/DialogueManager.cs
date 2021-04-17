@@ -21,8 +21,28 @@ public class DialogueManager : MonoBehaviour
     public GameObject insertImageBox;
     public Image insertImage;
 
-    [Header("Sprite")]
-    public Sprite PlayerSprite, DoctorSprite, Boss1Sprite, Boss2Sprite, Boss3Sprite;
+    [System.Serializable]
+    public class Speaker
+    {
+        public Dialogue.Speaker speakerName;
+        public Sprite speakerSprite;
+
+        public Speaker(Dialogue.Speaker speakerName)
+        {
+            this.speakerName = speakerName;
+        }
+    }
+
+    public Speaker[] speakers = {
+        new Speaker(Dialogue.Speaker.player),
+        new Speaker(Dialogue.Speaker.doctor),
+        new Speaker(Dialogue.Speaker.Boss1),
+        new Speaker(Dialogue.Speaker.Boss2),
+        new Speaker(Dialogue.Speaker.Boss3)
+    };
+
+    //[Header("Sprite")]
+    //public Sprite PlayerSprite, DoctorSprite, Boss1Sprite, Boss2Sprite, Boss3Sprite;
 
     void Start()
     {
@@ -60,12 +80,12 @@ public class DialogueManager : MonoBehaviour
         
         //set name on UI
         NameText.text = Dialogue.inGameNameSpeaker[dialogue.speaker.GetHashCode()];
-        
+
         //set speakerImage on UI
-        switch (dialogue.speaker)
+        /*switch (dialogue.speaker)
         {
             case Dialogue.Speaker.player:
-                speakerImage.sprite = PlayerSprite;
+                speakerImage.sprite = speakers;
                 break;
             case Dialogue.Speaker.doctor:
                 speakerImage.sprite = DoctorSprite;
@@ -79,7 +99,9 @@ public class DialogueManager : MonoBehaviour
             case Dialogue.Speaker.Boss3:
                 speakerImage.sprite = Boss3Sprite;
                 break;
-        }
+        }*/
+
+        speakerImage.sprite = speakers[dialogue.speaker.GetHashCode()].speakerSprite;
 
         //set dialogText on UI
         dialogText.text = dialogue.quote;

@@ -7,6 +7,13 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class Menu : MonoBehaviour
 {
+    public string scene_01;
+    public string scene_02;
+    public string scene_03;
+
+    [SerializeField]
+    public List<EnemyDataToSave> enemiesList;
+
     public void QuitGame()
     {
         Application.Quit();
@@ -17,19 +24,43 @@ public class Menu : MonoBehaviour
     {
         Save save = new Save();
 
+        save.level = LevelManager.instance.currentLv;
+
+        //save player
         save.playerPosX = Player.instance.transform.position.x;
         save.playerPosY = Player.instance.transform.position.y;
         save.playerHp = Player.instance.currentHP;
 
-        save.currentBullet_0 = BulletsController.instance.bullets[0].currentBullets;
-        save.currentBullet_1 = BulletsController.instance.bullets[1].currentBullets;
-        /*save.currentBullet_2 = BulletsController.instance.bullets[2].currentBullets;
-        save.currentBullet_3 = BulletsController.instance.bullets[3].currentBullets;
-        save.currentBullet_4 = BulletsController.instance.bullets[4].currentBullets;*/
+        //save bullets
 
+        save.bulletsLeft = new int[BulletsController.instance.bullets.Count];
+
+        for (int i = 0; i < BulletsController.instance.bullets.Count; i++)
+        {
+            save.bulletsLeft[i] = BulletsController.instance.bullets[i].currentBullets;
+        }
+
+        //save enemies
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        Debug.Log("gameObject : " + enemies.Length);
+        //Debug.Log("enemies[i] : " + enemies[0].GetComponent<Enemy>().scriptableEnemy.enemyName.GetHashCode());
+
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemiesList.Add(new EnemyDataToSave());
+            enemiesList[i].enemyIndex = enemies[i].GetComponent<Enemy>().scriptableEnemy.enemyName.GetHashCode();
+            enemiesList[i].enemyPositionX = enemies[i].transform.position.x;
+            enemiesList[i].enemyPositionY = enemies[i].transform.position.y;
+            enemiesList[i].enemyCurrentHP = enemies[i].GetComponent<Enemy>().enemyHp;
+            Debug.Log("loop : 1");
+        }
+
+        save.enemiesList = enemiesList;
+
+        Debug.Log("enemy index :" + save.enemiesList.Count);
         save.score = scoreManager.currentScore;
 
-        Debug.Log("save : " + save.playerPosX + save.playerPosY + save.playerHp + save.currentBullet_0);
+        //Debug.Log("save : " + save.playerPosX + save.playerPosY + save.playerHp + save.currentBullet_0);
 
         return save;
     }
@@ -46,7 +77,6 @@ public class Menu : MonoBehaviour
         binaryFormatter.Serialize(fileStream, save);
 
         fileStream.Close();
-
     }
 
     public void LoadGame()
@@ -63,18 +93,48 @@ public class Menu : MonoBehaviour
 
             fileStream.Close();
 
-            Player.instance.transform.position = new Vector2(save.playerPosX, save.playerPosY);
+            LevelManager.isLoadGameSave = true;
+
+            if (save.level == 1)
+            {
+                SceneManager.LoadScene(scene_01);
+            }
+            else if (save.level == 2)
+            {
+                SceneManager.LoadScene(scene_02);
+            }
+            else if (save.level == 3)
+            {
+                SceneManager.LoadScene(scene_03);
+            }
+            Debug.Log("level : " + save.level);
+
+            PlayerMovement.playerStartPosition = new Vector2(save.playerPosX, save.playerPosY);
             Player.instance.currentHP = save.playerHp;
 
-            BulletsController.instance.bullets[0].currentBullets = save.currentBullet_0;
-            BulletsController.instance.bullets[1].currentBullets = save.currentBullet_1;
-            /*BulletsController.instance.bullets[2].currentBullets = save.currentBullet_2;
-            BulletsController.instance.bullets[3].currentBullets = save.currentBullet_3;
-            BulletsController.instance.bullets[4].currentBullets = save.currentBullet_4;*/
+            if (LevelManager.instance.currentLv == 1)
+            {
+                BulletsController.bullet01_qty = save.bulletsLeft[0];
+            }
+            else if (LevelManager.instance.currentLv == 2)
+            {
+
+            }
+            else if (LevelManager.instance.currentLv == 3)
+            {
+
+            }
+
+            for (int i = 0; i < save.enemiesList.Count; i++)
+            {
+
+            }
+
 
             scoreManager.currentScore = save.score;
 
-            Debug.Log("load : " + save.playerPosX + save.playerPosY + save.playerHp + save.currentBullet_0);
+            Debug.Log("load : " + save.playerPosX + save.playerPosY + " " + save.playerHp + save.bulletsLeft[0]);
+            Debug.Log("Load+ : " + Player.instance.transform.position.x + Player.instance.transform.position.y);
         }
     }
 }

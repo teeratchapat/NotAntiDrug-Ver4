@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Platform
   - Enemy
+  - Box
   layers:
   - Default
   - TransparentFX
@@ -61,6 +62,12 @@ TagManager:
   - name: WolrdTile
     uniqueID: 2863410561
     locked: 0
+  - name: GameObject
+    uniqueID: 1855837945
+    locked: 0
+  - name: NPC
+    uniqueID: 1993780607
+    locked: 0
   - name: Enemy
     uniqueID: 2643496693
     locked: 0
@@ -69,4 +76,7 @@ TagManager:
     locked: 0
   - name: ForegroundTile
     uniqueID: 1759179317
+    locked: 0
+  - name: IngameUI
+    uniqueID: 3329892411
     locked: 0

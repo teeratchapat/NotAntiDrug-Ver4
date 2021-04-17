@@ -7,9 +7,13 @@ public class PlayerMovement : MonoBehaviour
     // serializeField make private variable can edit by unity inspector
     public static PlayerMovement instance;
 
-    private Animator anim;
+    public Animator anim;
+
+    [Header("static value")]
+    public static Vector2 playerStartPosition;
 
     [Header("object variable")]
+    public GameObject bulletPrefab;
     public Rigidbody2D playerRigidbody2d;
     public SpriteRenderer playerSpriteRenderer;
     public Transform aim;
@@ -50,13 +54,17 @@ public class PlayerMovement : MonoBehaviour
         instance = this;
         playerRigidbody2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        if (LevelManager.isLoadGameSave)
+        {
+            this.transform.position = playerStartPosition;
+            Debug.Log("playerStartPosition : " + playerStartPosition);
+        }
     }
 
     void Update()
     {
-
         isGround = Physics2D.OverlapCircle(groundCheckpoint.position, 0.2f, whatIsGround);
-        
+
         if (isGround)
         {
             anim.SetBool("isGrounded", true);
@@ -82,9 +90,8 @@ public class PlayerMovement : MonoBehaviour
             //shoot
             if (Input.GetButtonDown("Fire1") && nextFire < Time.time)
             {
-                anim.SetTrigger("shootTrigger");
                 shoot();
-                
+                anim.SetTrigger("shootTrigger");
             }
 
             //change bullets
@@ -110,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
             //vetacal aim
             aimVertical = Input.GetAxis("Vertical");
 
-            playerRigidbody2d.velocity = new Vector2(moveHorizontal* speed, playerRigidbody2d.velocity.y) ;
+            playerRigidbody2d.velocity = new Vector2(moveHorizontal * speed, playerRigidbody2d.velocity.y);
 
             //facing handle
             if (moveHorizontal < 0)
@@ -131,8 +138,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         else
-        { 
-            AudioManager.instance.PlaySfx(14);
+        {
             anim.SetBool("isHurt", true);
             knockbackTimeCounter -= Time.deltaTime;
             if (isTurnRight)
@@ -149,7 +155,8 @@ public class PlayerMovement : MonoBehaviour
         if (aimVertical < 0)
         {
             isAimDown = true;
-        }else if (aimVertical > 0)
+        }
+        else if (aimVertical > 0)
         {
             isAimUp = true;
         }
@@ -164,14 +171,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGround)
         {
-            AudioManager.instance.PlaySfx(7);
             playerRigidbody2d.velocity = new Vector2(playerRigidbody2d.velocity.x, jumpForce);
         }
         else
         {
             if (isCanDoubleJump)
             {
-                AudioManager.instance.PlaySfx(7);
                 playerRigidbody2d.velocity = new Vector2(playerRigidbody2d.velocity.x, jumpForce);
                 isCanDoubleJump = false;
             }
@@ -192,11 +197,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (isAimUp)
                 {
-                    bulletInstance.GetComponent<BulletBehavior>().throwDirection(new Vector2(1,1));
+                    bulletInstance.GetComponent<BulletBehavior>().throwDirection(new Vector2(1, 1));
                 }
-                else if(isAimDown)
+                else if (isAimDown)
                 {
-                    bulletInstance.GetComponent<BulletBehavior>().throwDirection(new Vector2(1,-1));
+                    bulletInstance.GetComponent<BulletBehavior>().throwDirection(new Vector2(1, -1));
                 }
                 else
                 {
@@ -221,7 +226,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             bulletInstance.GetComponent<BulletBehavior>().bulletDamage = BulletsController.instance.bullets[i].damagePower;
-
+            BulletsUI.instance.updateBulletUI();
             nextFire = Time.time + fireRate;
         }
     }
@@ -229,11 +234,12 @@ public class PlayerMovement : MonoBehaviour
     private void changeBullets()
     {
         currentBulletsID++;
-        
+
         if (currentBulletsID > BulletsController.instance.bullets.Count)
         {
             currentBulletsID = 1;
         }
+        BulletsUI.instance.updateBulletUI();
         Debug.Log("PlayerMovement change bullets to :" + currentBulletsID + " / " + BulletsController.instance.bullets.Count);
     }
 
@@ -243,4 +249,3 @@ public class PlayerMovement : MonoBehaviour
         playerRigidbody2d.velocity = new Vector2(0f, knockbackPwr);
     }
 }
-

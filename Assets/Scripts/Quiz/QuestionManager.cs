@@ -116,9 +116,11 @@ public class QuestionManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        timeLeft = (int)(time-Time.time);
+        timeLeft = (time-Time.deltaTime);
 
-        timeLeft_Text.text = timeLeft.ToString();
+        timeLeftToDisplay = (int)timeLeft;
+
+        timeLeft_Text.text = timeLeftToDisplay.ToString();
 
         if (timeLeft <= 0)
         {

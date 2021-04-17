@@ -17,7 +17,7 @@ public class patrolBehavior : MonoBehaviour
 
     public float speed = 1f;
     public float offset = 0.1f;
-    public float size = 0.2f;
+    public float size = 0.4f;
 
     public LayerMask whatIsGround;
 
@@ -25,6 +25,7 @@ public class patrolBehavior : MonoBehaviour
     {
         boxCollider2d = GetComponent<BoxCollider2D>();
         rigidBody2d = GetComponent<Rigidbody2D>();
+        offset = size / 2f;
     }
 
     void Update()
