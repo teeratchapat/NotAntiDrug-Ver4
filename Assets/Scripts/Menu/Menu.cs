@@ -29,7 +29,7 @@ public class Menu : MonoBehaviour
         //save player
         save.playerPosX = Player.instance.transform.position.x;
         save.playerPosY = Player.instance.transform.position.y;
-        save.playerHp = Player.instance.currentHP;
+        save.playerHp = Player.currentHP;
 
         //save bullets
 
@@ -110,7 +110,7 @@ public class Menu : MonoBehaviour
             Debug.Log("level : " + save.level);
 
             PlayerMovement.playerStartPosition = new Vector2(save.playerPosX, save.playerPosY);
-            Player.instance.currentHP = save.playerHp;
+            Player.currentHP = save.playerHp;
 
             if (LevelManager.instance.currentLv == 1)
             {
@@ -118,18 +118,20 @@ public class Menu : MonoBehaviour
             }
             else if (LevelManager.instance.currentLv == 2)
             {
-
+                BulletsController.bullet01_qty = save.bulletsLeft[0];
+                BulletsController.bullet02_qty = save.bulletsLeft[1];
             }
             else if (LevelManager.instance.currentLv == 3)
             {
-
+                BulletsController.bullet01_qty = save.bulletsLeft[0];
+                BulletsController.bullet02_qty = save.bulletsLeft[1];
+                BulletsController.bullet03_qty = save.bulletsLeft[2];
+                BulletsController.bullet04_qty = save.bulletsLeft[3];
             }
 
-            for (int i = 0; i < save.enemiesList.Count; i++)
-            {
-
-            }
-
+            //Debug.Log("x" + LevelManager.instance.enemyToLoad_Index.Length + "xx" + save.enemiesList.Count);
+            
+            //Debug.Log("pq = " + EnemyDataToLoad.enemyToLoad_Index.Length);
 
             scoreManager.currentScore = save.score;
 

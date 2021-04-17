@@ -20,7 +20,7 @@ TagManager:
   - Enemy
   - Player
   - Object
-  - 
+  - bullet
   - 
   - 
   - 
@@ -73,6 +73,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2016914771
+    locked: 0
+  - name: Bullet
+    uniqueID: 2322044927
     locked: 0
   - name: ForegroundTile
     uniqueID: 1759179317

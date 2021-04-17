@@ -9,14 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85b04d969442d3b4792e97d4c59d8a73, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f5bc1e9929d86449bbcc58e6f3e3001, type: 3}
   m_Name: New Bullet
   m_EditorClassIdentifier: 
   bulletsName: 
-  bulletsType: 0
-  maxBullets: 0
-  currentBullets: 0
+  bulletsType: 1
   damagePower: 0
   description: 
   sprite: {fileID: 0}
-  bulletPrefab: {fileID: 0}

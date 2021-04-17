@@ -20,7 +20,7 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (Player.instance.currentHP)
+        switch (Player.currentHP)
         {
             case 3:
                 heart_1.sprite = heartFull;

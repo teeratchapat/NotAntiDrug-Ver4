@@ -10,15 +10,11 @@ public class BulletsUI : MonoBehaviour
     public Image bulletsImage;
     public Text curruntBulletText, maxBulletText, nameBulletText;
 
-    public Sprite bulletsSprite;
-
     public int i;
 
     void Start()
     {
         instance = this;
-        //bulletsImage.sprite = BulletsController.instance.bullets[0].sprite;
-        updateBulletUI();
     }
 
     public void updateBulletUI()

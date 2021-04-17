@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
@@ -14,8 +17,9 @@ public class LevelManager : MonoBehaviour
     private float waitToRespawn = 2;
 
     public int[] enemyToLoad_Index;
+    public float[] enemyToLoad_HP;
     public Vector2[] enemyToLoad_Position;
-
+    
     public int currentLv;
     public Transform[] enemySpawnPoint;
 
@@ -34,14 +38,14 @@ public class LevelManager : MonoBehaviour
         public ScriptableEnemy.EnemyName enemyName;
         public float spawnRate;
 
-        public EnemyToSpawn (ScriptableEnemy.EnemyName enemyName,float spawnRate)
+        public EnemyToSpawn(ScriptableEnemy.EnemyName enemyName, float spawnRate)
         {
             this.enemyName = enemyName;
             this.spawnRate = spawnRate;
         }
     }
 
-    public EnemyToSpawn[] enemySpawnRate = { 
+    public EnemyToSpawn[] enemySpawnRate = {
         new EnemyToSpawn(ScriptableEnemy.EnemyName.Alcohol,0),
         new EnemyToSpawn(ScriptableEnemy.EnemyName.Glue,0),
         new EnemyToSpawn(ScriptableEnemy.EnemyName.Opium,0),
@@ -77,6 +81,7 @@ public class LevelManager : MonoBehaviour
         if (isLoadGameSave)
         {
             LoadSavedEnemy();
+            //Debug.Log("q = " + EnemyDataToLoad.enemyToLoadQueue.Count);
         }
         else
         {
@@ -96,7 +101,7 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(waitToRespawn);
 
         Player.instance.gameObject.SetActive(true);
-        Player.instance.currentHP = Player.instance.maxHP;
+        Player.currentHP = Player.instance.maxHP;
         Player.instance.transform.position = spawnPoint;
         AudioManager.instance.PlaySfx(12);
         FindObjectOfType<HPbarUI>().updateHpUI();
@@ -197,11 +202,11 @@ public class LevelManager : MonoBehaviour
 
         enemiesToSpawn = new ScriptableEnemy.EnemyName[enemySpawnPoint.Length];
 
-        for(int i = 0; i < enemySpawnPoint.Length; i++)
+        for (int i = 0; i < enemySpawnPoint.Length; i++)
         {
             if (i < numOfEnemyToSpawn)
             {
-                float rnd = Random.Range(0,sumOfEnemySpawnRate);
+                float rnd = Random.Range(0, sumOfEnemySpawnRate);
                 //Debug.Log("Spawn(rnd) : " + rnd);
 
                 //add enemy
@@ -214,7 +219,8 @@ public class LevelManager : MonoBehaviour
                     enemyIndex += 1;
                 }
 
-                switch (enemyIndex) {
+                switch (enemyIndex)
+                {
                     case 1:
                         enemiesToSpawn[i] = ScriptableEnemy.EnemyName.Alcohol;
                         break;
@@ -243,7 +249,7 @@ public class LevelManager : MonoBehaviour
                         break;
                 }
                 Debug.Log("rnd : " + rnd + "/" + counter + " spawn : " + enemyIndex);
-            }   
+            }
             else
             {
                 enemiesToSpawn[i] = ScriptableEnemy.EnemyName.none;
@@ -298,6 +304,69 @@ public class LevelManager : MonoBehaviour
 
     public void LoadSavedEnemy()
     {
+        if (File.Exists(Application.dataPath + "/data.text"))
+        {
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
 
-    }
+            //FileStream fileStream = File.Open(Application.persistentDataPath + "/data.text", FileMode.Open);
+            FileStream fileStream = File.Open(Application.dataPath + "/data.text", FileMode.Open);
+
+            Save save = binaryFormatter.Deserialize(fileStream) as Save;
+
+            fileStream.Close();
+
+            for (int i = 0; i < save.enemiesList.Count; i++)
+            {
+                GameObject clone;
+                switch (save.enemiesList[i].enemyIndex)
+                {
+                    case 0:
+                        break;
+                    case (int)ScriptableEnemy.EnemyName.Alcohol:
+                        clone = (GameObject)Instantiate(Alcohol,new Vector2( save.enemiesList[i].enemyPositionX,save.enemiesList[i].enemyPositionY), Quaternion.identity);
+                        clone.GetComponent<Enemy>().enemyHp = save.enemiesList[i].enemyCurrentHP;
+                        Debug.Log("spawn : Alcohol ");
+                        break;
+                    case (int)ScriptableEnemy.EnemyName.Glue:
+                        clone = (GameObject)Instantiate(Glue, new Vector2( save.enemiesList[i].enemyPositionX,save.enemiesList[i].enemyPositionY), Quaternion.identity);
+                        clone.GetComponent<Enemy>().enemyHp =  save.enemiesList[i].enemyCurrentHP;
+                        break;
+                    case (int)ScriptableEnemy.EnemyName.Opium:
+                        clone = (GameObject)Instantiate(Opium, new Vector2( save.enemiesList[i].enemyPositionX,save.enemiesList[i].enemyPositionY), Quaternion.identity);
+                        clone.GetComponent<Enemy>().enemyHp =  save.enemiesList[i].enemyCurrentHP;
+                        break;
+                    case (int)ScriptableEnemy.EnemyName.Amphetamine:
+                        clone = (GameObject)Instantiate(Amphetamine, new Vector2( save.enemiesList[i].enemyPositionX,save.enemiesList[i].enemyPositionY), Quaternion.identity);
+                        clone.GetComponent<Enemy>().enemyHp =  save.enemiesList[i].enemyCurrentHP;
+                        break;
+                    case (int)ScriptableEnemy.EnemyName.Cocaine:
+                        clone = (GameObject)Instantiate(Cocaine, new Vector2( save.enemiesList[i].enemyPositionX,save.enemiesList[i].enemyPositionY), Quaternion.identity);
+                        clone.GetComponent<Enemy>().enemyHp =  save.enemiesList[i].enemyCurrentHP;
+                        break;
+                    case (int)ScriptableEnemy.EnemyName.Ecstasy:
+                        clone = (GameObject)Instantiate(Ecstasy, new Vector2( save.enemiesList[i].enemyPositionX,save.enemiesList[i].enemyPositionY), Quaternion.identity);
+                        clone.GetComponent<Enemy>().enemyHp =  save.enemiesList[i].enemyCurrentHP;
+                        break;
+                    case (int)ScriptableEnemy.EnemyName.Mitragynine:
+                        clone = (GameObject)Instantiate(Mitragynine, new Vector2( save.enemiesList[i].enemyPositionX,save.enemiesList[i].enemyPositionY), Quaternion.identity);
+                        clone.GetComponent<Enemy>().enemyHp =  save.enemiesList[i].enemyCurrentHP;
+                        break;
+                    case (int)ScriptableEnemy.EnemyName.MagicMushroom:
+                        clone = (GameObject)Instantiate(MagicMushroom, new Vector2( save.enemiesList[i].enemyPositionX,save.enemiesList[i].enemyPositionY), Quaternion.identity);
+                        clone.GetComponent<Enemy>().enemyHp =  save.enemiesList[i].enemyCurrentHP;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+            //Debug.Log("q = " + EnemyDataToLoad.enemyToLoadQueue.Count);
+            /*
+            for (int i = 0; i < EnemyDataToLoad.instance.enemyToLoadQueue.Count; i++)
+            {
+                EnemyDataToLoad.EnemyToLoad enemyToLoad = EnemyDataToLoad.instance.enemyToLoadQueue.Dequeue();
+                
+            }
+            */
+        }
 }

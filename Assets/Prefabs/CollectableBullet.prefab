@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3512706401156086364}
   - component: {fileID: 3512706401156086365}
   - component: {fileID: 3512706401156086354}
-  - component: {fileID: 3324571757412872575}
   m_Layer: 0
   m_Name: CollectableBullet
   m_TagString: Untagged
@@ -71,15 +70,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1195802787
-  m_SortingLayer: 11
+  m_SortingLayerID: 1855837945
+  m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1e536df06d85d974f840715a5c4c5997, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 790d8521e898fb148a390f271211e89b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.01, y: 1.01}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -102,8 +101,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.01, y: 1.01}
-    newSize: {x: 1.01, y: 1.01}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -120,20 +119,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3512706401156086352}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22b37143de9da3747a830c189f95473a, type: 3}
+  m_Script: {fileID: 11500000, guid: a1fdf03a375a4dc4288e8ec8c230cb46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletsToAdd: 10
   bulletID: 1
---- !u!114 &3324571757412872575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3512706401156086352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df6376d0a20976f4a8599066bea6df5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

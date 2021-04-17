@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public Animator anim;
 
     public float maxHP;
-    public float currentHP;
+    public static float currentHP;
 
     public float invincibleLength;
     public float invincibleCounter;
@@ -32,11 +32,19 @@ public class Player : MonoBehaviour
     void Start()
     {
         maxHP = 100;
-        currentHP = maxHP;
+        if (LevelManager.isLoadGameSave)
+        {
+
+        }
+        else
+        {
+            currentHP = maxHP;
+        }
+        
 
         spriteRendererPlayer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        //FindObjectOfType<HPbarUI>().updateHpUI();
+        FindObjectOfType<HPbarUI>().updateHpUI();
 
         NormalColor = new Color(spriteRendererPlayer.color.r, spriteRendererPlayer.color.g, spriteRendererPlayer.color.b, 1f);
         FlashColor = new Color(spriteRendererPlayer.color.r, spriteRendererPlayer.color.g, spriteRendererPlayer.color.b, 0.5f);

@@ -70,15 +70,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1901065509
-  m_SortingLayer: 6
+  m_SortingLayerID: 1855837945
+  m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 42820af2772f24bda991ed7de294c2fd, type: 3}
+  m_Sprite: {fileID: -704459396801619952, guid: e66da80b51ec3f342adb63c6ab9ed299, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.18, y: 0.2}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -93,12 +93,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 944959865937200172}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9efbdf249ae785b4a94a58aaf9611d5a, type: 3}
+  m_Script: {fileID: 11500000, guid: d83b63e548e83d14694f658f5b453ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 944959865937200178}
-  checkPointOnSprite: {fileID: 21300000, guid: 42820af2772f24bda991ed7de294c2fd, type: 3}
-  checkPointOffSprite: {fileID: 21300000, guid: 42820af2772f24bda991ed7de294c2fd, type: 3}
+  checkPointOnSprite: {fileID: -704459396801619952, guid: e66da80b51ec3f342adb63c6ab9ed299, type: 3}
+  checkPointOffSprite: {fileID: 1982734929119423963, guid: e66da80b51ec3f342adb63c6ab9ed299, type: 3}
 --- !u!61 &944959865937200176
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -116,8 +116,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5625, y: 0.625}
-    newSize: {x: 0.18, y: 0.2}
+    oldSize: {x: 0.90625, y: 1.03125}
+    newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

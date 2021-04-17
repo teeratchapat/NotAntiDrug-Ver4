@@ -23,7 +23,15 @@ public class Enemy : MonoBehaviour
     }
     private void Start()
     {
-        enemyHp = scriptableEnemy.enemyMaxHp;
+        if (LevelManager.isLoadGameSave)
+        {
+
+        }
+        else
+        {
+            enemyHp = scriptableEnemy.enemyMaxHp;
+        }
+        
         UpdateHpUI();
     }
     private void onCollisionEnter2D(Collision2D collision)
