@@ -365,7 +365,6 @@ public class LevelManager : MonoBehaviour
             for (int i = 0; i < EnemyDataToLoad.instance.enemyToLoadQueue.Count; i++)
             {
                 EnemyDataToLoad.EnemyToLoad enemyToLoad = EnemyDataToLoad.instance.enemyToLoadQueue.Dequeue();
-                
             }
             */
         }

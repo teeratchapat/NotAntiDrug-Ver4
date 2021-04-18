@@ -32,6 +32,11 @@ public class scoreManager : MonoBehaviour
         Debug.Log("score = " + currentScore);
     }
 
+    public int getScore()
+    {
+        return currentScore;
+    }
+
     public void UpdateScoreUI()
     {
         text.text = currentScore.ToString();

@@ -28,6 +28,16 @@ public class QuestionManager : MonoBehaviour
     public Button choice3_Button;
     public Button choice4_Button;
 
+    [Header("summary")]
+    public GameObject InputNameBox;
+    public InputField inputName;
+    public Button confirmName;
+    public Text SummaryScore_Text;
+    
+
+    public bool isInputName = false;
+    public string playerName;
+
     public string nextScene = "NextScene";
     public string mainMenuScene = "MainMenuMenu";
 
@@ -61,6 +71,8 @@ public class QuestionManager : MonoBehaviour
     {
         instance = this;
 
+        Time.timeScale = 1;
+
         if(questionLevel == 0)
         {
             Debug.Log("choose (int)questionLevel 1-3");
@@ -81,6 +93,7 @@ public class QuestionManager : MonoBehaviour
             questions[i] = tempQuestion;
         }
 
+        defaultButtonColor = choice1_Button.GetComponent<Image>().color;
 
         timeLeft = (int)time;
 
@@ -116,7 +129,7 @@ public class QuestionManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        timeLeft = (time-Time.deltaTime);
+        timeLeft -= Time.deltaTime;
 
         timeLeftToDisplay = (int)timeLeft;
 
@@ -172,6 +185,7 @@ public class QuestionManager : MonoBehaviour
         else
         {
             EndQuiz();
+            Debug.Log("EndQuiz");
         }
     }
 
@@ -254,12 +268,13 @@ public class QuestionManager : MonoBehaviour
 
     public void EndQuiz()
     {
+        
         //deactive question ui and active summary ui
         questionHolder.SetActive(false);
         topBar.SetActive(false);
         summaryHolder.SetActive(true);
-        //showscore
-        //use FindObjectOfType<scoreManager>().currentScore;
+        
+        //
     }
 
     public void loadNextScene()
@@ -270,6 +285,17 @@ public class QuestionManager : MonoBehaviour
     public void loadMainMenu()
     {
         SceneManager.LoadScene(mainMenuScene);
+    }
+
+    public void SummitName()
+    {
+        if (inputName.text != null)
+        {
+            playerName = inputName.text;
+        }
+
+        InputNameBox.SetActive(false);
+        
     }
 
 
