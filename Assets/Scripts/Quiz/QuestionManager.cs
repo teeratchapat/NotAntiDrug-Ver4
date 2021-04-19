@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 public class QuestionManager : MonoBehaviour
 {
@@ -23,17 +25,18 @@ public class QuestionManager : MonoBehaviour
     public Text choice4_Text;
     public Text timeLeft_Text;
 
-    public Button choice1_Button; 
+    public Button choice1_Button;
     public Button choice2_Button;
     public Button choice3_Button;
     public Button choice4_Button;
 
     [Header("summary")]
+    public bool isEndQuiz;
     public GameObject InputNameBox;
     public InputField inputName;
-    public Button confirmName;
+    public Button confirmName_Button;
     public Text SummaryScore_Text;
-    
+
 
     public bool isInputName = false;
     public string playerName;
@@ -41,8 +44,8 @@ public class QuestionManager : MonoBehaviour
     public string nextScene = "NextScene";
     public string mainMenuScene = "MainMenuMenu";
 
-    public Color defaultButtonColor ;
-    public Color CorrectButtonColor ;
+    public Color defaultButtonColor;
+    public Color CorrectButtonColor;
 
     public List<Question> questions = new List<Question>();
     public List<Question> shuffledQuestions = new List<Question>();
@@ -67,20 +70,26 @@ public class QuestionManager : MonoBehaviour
 
     public bool isWait;
 
+    [Header("Highscore")]
+    public string filepath;
+    public bool isHaveInsertHighscore = false;
+    public int newHighscoreIndex = -1;
+    [SerializeField] public List<HighScore> highScoreList;
+
     private void Start()
     {
         instance = this;
 
         Time.timeScale = 1;
 
-        if(questionLevel == 0)
+        if (questionLevel == 0)
         {
             Debug.Log("choose (int)questionLevel 1-3");
         }
 
         questions.Add(new Question("สารเสพติดประเภทกดประสาทได้แก่อะไรบ้าง?", "ยาบ้า กาว", "เห็ดขี้ควาย แอลเอสดี", "กาว ฝิ่น", "ช่อดอกกัญชา กาว", 3, 100));
-        questions.Add(new Question("อาการของคนเสพสารเสพติดประเภทกดประสาทมีอาการอย่างไร?", "ร่าเริง ช่างพูด", "อ่อนเพลีย ฟุ้งซ่าน", "หงุดหงิด คลุ้มคลั่ง", "ถูกทุกข้อ",2 , 100));
-        questions.Add(new Question("กาว และเหล้าเป็นสารเสพติดออกฤทธิ์อย่างไร?", "กดประสาท", "กระตุ้นประสาท", "ผสมผสาน", "หลอนประสาท", 1,100));
+        questions.Add(new Question("อาการของคนเสพสารเสพติดประเภทกดประสาทมีอาการอย่างไร?", "ร่าเริง ช่างพูด", "อ่อนเพลีย ฟุ้งซ่าน", "หงุดหงิด คลุ้มคลั่ง", "ถูกทุกข้อ", 2, 100));
+        questions.Add(new Question("กาว และเหล้าเป็นสารเสพติดออกฤทธิ์อย่างไร?", "กดประสาท", "กระตุ้นประสาท", "ผสมผสาน", "หลอนประสาท", 1, 100));
         questions.Add(new Question("กาว ฝิ่น ยาบ้า อะไรไม่ใช่สารเสพติดประเภทกดประสาท?", "กาว", "ฝิ่น", "ไม่ใช่ทั้ง ก และ ข", "ไม่มีข้อถูก", 4, 100));
         questions.Add(new Question("เฮโรอีน จัดเป็นสารเสพติดที่สอดคล้องกับข้อใด?", "เป็นสารเสพติดประเภทที่ 1", "เป็นสารเสพติดประเภทที่ 2", "เป็นสารเสพติดประเภทที่ 3", "เป็นสารเสพติดประเภทที่ 4", 1, 100));
         questions.Add(new Question("ฝิ่นออกฤทธิ์ต่อร่างกายอย่างไร?", "กดประสาท", "กระตุ้นประสาท", "ผสมผสาน", "หลอนประสาท", 4, 100));
@@ -98,33 +107,43 @@ public class QuestionManager : MonoBehaviour
         timeLeft = (int)time;
 
         nextQuestion();
-        
+
+        LoadHighScore();
+
     }
 
     private void Update()
     {
-        if (isWait)
+        if (!isEndQuiz)
         {
-            choice1_Button.enabled = false;
-            choice2_Button.enabled = false;
-            choice3_Button.enabled = false;
-            choice4_Button.enabled = false;
-
-            if (Input.anyKeyDown)
+            if (isWait)
             {
-                currentQuestion++;
+                choice1_Button.enabled = false;
+                choice2_Button.enabled = false;
+                choice3_Button.enabled = false;
+                choice4_Button.enabled = false;
 
-                correctIcon.SetActive(false);
-                incorrectIcon.SetActive(false);
+                if (Input.anyKeyDown)
+                {
+                    currentQuestion++;
 
-                nextQuestion();
+                    correctIcon.SetActive(false);
+                    incorrectIcon.SetActive(false);
 
-                choice1_Button.enabled = true;
-                choice2_Button.enabled = true;
-                choice3_Button.enabled = true;
-                choice4_Button.enabled = true;
+                    nextQuestion();
+
+                    choice1_Button.enabled = true;
+                    choice2_Button.enabled = true;
+                    choice3_Button.enabled = true;
+                    choice4_Button.enabled = true;
+                }
             }
         }
+        else
+        {
+
+        }
+
     }
 
     private void FixedUpdate()
@@ -138,7 +157,8 @@ public class QuestionManager : MonoBehaviour
         if (timeLeft <= 0)
         {
             EndQuiz();
-        } else if (timeLeft <= timeToNotice)
+        }
+        else if (timeLeft <= timeToNotice)
         {
             AudioManager.instance.PlaySfx(17);
         }
@@ -153,23 +173,24 @@ public class QuestionManager : MonoBehaviour
             choiceArray = new string[] { questions[currentQuestion].choice1, questions[currentQuestion].choice2, questions[currentQuestion].choice3, questions[currentQuestion].choice4 };
             keyIndex = questions[currentQuestion].key - 1;
 
-            for (int i = 0; i < choiceArray.Length-1; i++)
+            for (int i = 0; i < choiceArray.Length - 1; i++)
             {
                 int rnd = Random.Range(i, choiceArray.Length);
                 tempString = choiceArray[rnd];
                 choiceArray[rnd] = choiceArray[i];
                 choiceArray[i] = tempString;
 
-                if(rnd == keyIndex)
+                if (rnd == keyIndex)
                 {
                     keyIndex = i;
-                }else if(i == keyIndex)
+                }
+                else if (i == keyIndex)
                 {
                     keyIndex = rnd;
                 }
             }
 
-            questionNumber.text = (currentQuestion+1).ToString();
+            questionNumber.text = (currentQuestion + 1).ToString();
 
             choice1_Button.GetComponent<Image>().color = defaultButtonColor;
             choice2_Button.GetComponent<Image>().color = defaultButtonColor;
@@ -211,7 +232,7 @@ public class QuestionManager : MonoBehaviour
 
     public void checkAnswer(int answer)
     {
-        if(answer == keyIndex)
+        if (answer == keyIndex)
         {
             Debug.Log("correct answer");
             AudioManager.instance.PlaySfx(10);
@@ -268,13 +289,30 @@ public class QuestionManager : MonoBehaviour
 
     public void EndQuiz()
     {
-        
+        isEndQuiz = true;
         //deactive question ui and active summary ui
         questionHolder.SetActive(false);
         topBar.SetActive(false);
         summaryHolder.SetActive(true);
-        
+
         //
+        if (highScoreList.Count < 5)
+        {
+            InputNameBox.SetActive(true);
+        }
+        else
+        {
+            for (int i = 0; i < highScoreList.Count; i++)
+            {
+                if (highScoreList[i].score <= scoreManager.currentScore)
+                {
+                    InputNameBox.SetActive(true);
+                }
+            }
+        }
+
+        
+
     }
 
     public void loadNextScene()
@@ -295,8 +333,107 @@ public class QuestionManager : MonoBehaviour
         }
 
         InputNameBox.SetActive(false);
-        
+        addNewHighscore();
+
     }
 
+    public void LoadHighScore()
+    {
+        if (File.Exists(Application.dataPath + filepath))
+        {
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
 
+            //FileStream fileStream = File.Open(Application.persistentDataPath + "/data.text", FileMode.Open);
+            FileStream fileStream = File.Open(Application.dataPath + filepath, FileMode.Open);
+
+            //Save save = binaryFormatter.Deserialize(fileStream) as Save;
+           GameDataSave gameDataSave = binaryFormatter.Deserialize(fileStream) as GameDataSave;
+
+            fileStream.Close();
+
+            if(questionLevel == 1)
+            {
+                highScoreList = gameDataSave.highScoreSaveList_level01;
+            }
+            else if (questionLevel == 2)
+            {
+                highScoreList = gameDataSave.highScoreSaveList_level02;
+            }else if(questionLevel == 3)
+            {
+                highScoreList = gameDataSave.highScoreSaveList_level03;
+            }
+            
+        }
+        else
+        {
+            Debug.Log("LoadHighScore not found data");
+        }
+    }
+
+    public void addNewHighscore()
+    {
+        if (highScoreList.Count ==0)
+        {
+            highScoreList.Add(new HighScore(playerName, scoreManager.currentScore));
+        }
+        else
+        {
+            for (int i = 0; i < highScoreList.Count; i++)
+            {
+                if (highScoreList[i].score <= scoreManager.currentScore)
+                {
+                    isHaveInsertHighscore = true;
+                    newHighscoreIndex = i;
+                }
+            }
+
+            if (isHaveInsertHighscore)
+            {
+                highScoreList.Insert(newHighscoreIndex, new HighScore(playerName, scoreManager.currentScore));
+                highScoreList.RemoveAt(highScoreList.Count);
+            }
+        }
+
+        Debug.Log(highScoreList.Count);
+
+        GameDataSave gameDataSave = new GameDataSave();
+        if (questionLevel == 1)
+        {
+            gameDataSave.highScoreSaveList_level01 = highScoreList;
+        }
+        else if (questionLevel == 2)
+        {
+            gameDataSave.highScoreSaveList_level01 = highScoreList;
+        }
+        else if (questionLevel == 3)
+        {
+            gameDataSave.highScoreSaveList_level01 = highScoreList;
+        }
+        
+
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
+
+        //FileStream fileStream = File.Create(Application.persistentDataPath + "/data.text");
+        FileStream fileStream = File.Create(Application.dataPath + filepath);
+
+        binaryFormatter.Serialize(fileStream, gameDataSave);
+
+        fileStream.Close();
+
+    }
+
+    public void unlockLevel()
+    {
+        GameDataSave gameDataSave = new GameDataSave();
+        gameDataSave.unlockToLevel = questionLevel+1;
+
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
+
+        //FileStream fileStream = File.Create(Application.persistentDataPath + "/data.text");
+        FileStream fileStream = File.Create(Application.dataPath + filepath);
+
+        binaryFormatter.Serialize(fileStream, gameDataSave);
+
+        fileStream.Close();
+    }
 }

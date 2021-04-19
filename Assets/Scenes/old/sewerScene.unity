@@ -418,7 +418,7 @@ MonoBehaviour:
   - enemyName: 8
     spawnRate: 0
   sumOfEnemySpawnRate: 0
-  numOfEnemyToSpawn: 25
+  numOfEnemyToSpawn: 13
   enemiesToSpawn: 
 --- !u!1001 &46723699
 PrefabInstance:
@@ -81584,6 +81584,13 @@ MonoBehaviour:
   choice2_Button: {fileID: 927881790}
   choice3_Button: {fileID: 1397761187}
   choice4_Button: {fileID: 1522677172}
+  isEndQuiz: 0
+  InputNameBox: {fileID: 0}
+  inputName: {fileID: 0}
+  confirmName_Button: {fileID: 0}
+  SummaryScore_Text: {fileID: 0}
+  isInputName: 0
+  playerName: 
   nextScene: NextScene
   mainMenuScene: MainMenuMenu
   defaultButtonColor: {r: 0, g: 0, b: 0, a: 0}
@@ -81600,6 +81607,10 @@ MonoBehaviour:
   scoreToAdd: 100
   scoreToRedure: 100
   isWait: 0
+  filepath: 
+  isHaveInsertHighscore: 0
+  newHighscoreIndex: -1
+  highScoreList: []
 --- !u!4 &1311400760
 Transform:
   m_ObjectHideFlags: 0
@@ -108842,11 +108853,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6182036987780075499, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.1693287
+      value: -8.16
       objectReference: {fileID: 0}
     - target: {fileID: 6182036987780075499, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3619709
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6182036987780075499, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
       propertyPath: m_LocalPosition.z

@@ -1216,9 +1216,10 @@ MonoBehaviour:
   choice2_Button: {fileID: 175665972}
   choice3_Button: {fileID: 441743992}
   choice4_Button: {fileID: 801930524}
+  isEndQuiz: 0
   InputNameBox: {fileID: 2053214866}
   inputName: {fileID: 726899255}
-  confirmName: {fileID: 224724703}
+  confirmName_Button: {fileID: 0}
   SummaryScore_Text: {fileID: 0}
   isInputName: 0
   playerName: 
@@ -1238,6 +1239,10 @@ MonoBehaviour:
   scoreToAdd: 100
   scoreToRedure: 100
   isWait: 0
+  filepath: /GameDataSave
+  isHaveInsertHighscore: 0
+  newHighscoreIndex: -1
+  highScoreList: []
 --- !u!1 &433358261
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,9 +1716,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 604169928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63ad131ff5c763a46a315785c20c532a, type: 3}
+  m_Script: {fileID: 11500000, guid: fcba390612f339148b69445bccf2c811, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 864161284}
 --- !u!1 &637911469
 GameObject:
   m_ObjectHideFlags: 0
@@ -6450,7 +6456,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2053214867
 RectTransform:
   m_ObjectHideFlags: 0

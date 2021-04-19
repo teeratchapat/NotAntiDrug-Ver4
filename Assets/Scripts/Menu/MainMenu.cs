@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 public class MainMenu : MonoBehaviour
 {
@@ -14,10 +17,59 @@ public class MainMenu : MonoBehaviour
     public Canvas scoreBoardCanvas;
     public Canvas creditCanvas;
 
+    public Button selectLevel_01_Button;
+    public Button selectLevel_02_Button;
+    public Button selectLevel_03_Button;
+
+    public string filePath;
+
+    public int unlockToLevel = 1;
+
+    public void Start()
+    {
+        if (File.Exists(Application.dataPath + filePath))
+        {
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+
+            //FileStream fileStream = File.Open(Application.persistentDataPath + "/data.text", FileMode.Open);
+            FileStream fileStream = File.Open(Application.dataPath + filePath, FileMode.Open);
+
+            GameDataSave gameDataSave = binaryFormatter.Deserialize(fileStream) as GameDataSave;
+
+            fileStream.Close();
+
+            unlockToLevel = gameDataSave.unlockToLevel;
+        }
+        else
+        {
+            Debug.Log("LoadHighScore not found data");
+        }
+    }
+
     public void OpenPlayMenu()
     {
         mainMenuCanvas.gameObject.SetActive(false);
         levelSelectCanvas.gameObject.SetActive(true);
+
+        selectLevel_01_Button.interactable = false;
+        selectLevel_02_Button.interactable = false;
+        selectLevel_03_Button.interactable = false;
+
+        if (unlockToLevel == 1)
+        {
+            selectLevel_01_Button.interactable = true;
+        }
+        else if(unlockToLevel == 2)
+        {
+            selectLevel_01_Button.interactable = true;
+            selectLevel_02_Button.interactable = true;
+        }
+        else if(unlockToLevel == 3)
+        {
+            selectLevel_01_Button.interactable = true;
+            selectLevel_02_Button.interactable = true;
+            selectLevel_03_Button.interactable = true;
+        }   
     }
 
     public void OpenScoreBoard()
