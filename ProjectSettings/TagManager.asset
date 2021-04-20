@@ -80,6 +80,9 @@ TagManager:
   - name: ForegroundTile
     uniqueID: 1759179317
     locked: 0
+  - name: ForegroundTile 2
+    uniqueID: 604425547
+    locked: 0
   - name: IngameUI
     uniqueID: 3329892411
     locked: 0
