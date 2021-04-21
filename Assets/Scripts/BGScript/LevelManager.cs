@@ -31,6 +31,7 @@ public class LevelManager : MonoBehaviour
     public GameObject Ecstasy;
     public GameObject Mitragynine;
     public GameObject MagicMushroom;
+    public GameObject Marijuana;
 
     [System.Serializable]
     public class EnemyToSpawn
@@ -54,6 +55,7 @@ public class LevelManager : MonoBehaviour
         new EnemyToSpawn(ScriptableEnemy.EnemyName.Ecstasy,0),
         new EnemyToSpawn(ScriptableEnemy.EnemyName.Mitragynine,0),
         new EnemyToSpawn(ScriptableEnemy.EnemyName.MagicMushroom,0),
+        new EnemyToSpawn(ScriptableEnemy.EnemyName.Marijuana,0)
     };
     public float sumOfEnemySpawnRate;
     public int numOfEnemyToSpawn;
@@ -245,6 +247,9 @@ public class LevelManager : MonoBehaviour
                     case 8:
                         enemiesToSpawn[i] = ScriptableEnemy.EnemyName.MagicMushroom;
                         break;
+                    case 9:
+                        enemiesToSpawn[i] = ScriptableEnemy.EnemyName.Marijuana;
+                        break;
                     default:
                         break;
                 }
@@ -293,6 +298,9 @@ public class LevelManager : MonoBehaviour
                     break;
                 case ScriptableEnemy.EnemyName.MagicMushroom:
                     Instantiate(MagicMushroom, enemySpawnPoint[i].position, Quaternion.identity);
+                    break;
+                case ScriptableEnemy.EnemyName.Marijuana:
+                    Instantiate(Marijuana, enemySpawnPoint[i].position, Quaternion.identity);
                     break;
                 default:
                     break;
@@ -354,6 +362,10 @@ public class LevelManager : MonoBehaviour
                     case (int)ScriptableEnemy.EnemyName.MagicMushroom:
                         clone = (GameObject)Instantiate(MagicMushroom, new Vector2( save.enemiesList[i].enemyPositionX,save.enemiesList[i].enemyPositionY), Quaternion.identity);
                         clone.GetComponent<Enemy>().enemyHp =  save.enemiesList[i].enemyCurrentHP;
+                        break;
+                    case (int)ScriptableEnemy.EnemyName.Marijuana:
+                        clone = (GameObject)Instantiate(Marijuana, new Vector2(save.enemiesList[i].enemyPositionX, save.enemiesList[i].enemyPositionY), Quaternion.identity);
+                        clone.GetComponent<Enemy>().enemyHp = save.enemiesList[i].enemyCurrentHP;
                         break;
                     default:
                         break;

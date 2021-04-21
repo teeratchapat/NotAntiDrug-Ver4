@@ -17,6 +17,11 @@ public class BulletsUI : MonoBehaviour
         instance = this;
     }
 
+    private void Update()
+    {
+        updateBulletUI();
+    }
+
     public void updateBulletUI()
     {
         i = PlayerMovement.instance.currentBulletsID - 1;

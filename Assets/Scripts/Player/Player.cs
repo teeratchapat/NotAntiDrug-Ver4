@@ -89,6 +89,8 @@ public class Player : MonoBehaviour
 
             if (currentHP <= 0)
             {
+                currentHP = 0;
+                FindObjectOfType<HPbarUI>().updateHpUI();
                 FindObjectOfType<scoreManager>().reduceScore(scoreToReduce);
                 //death
                 //Debug.Log("death");

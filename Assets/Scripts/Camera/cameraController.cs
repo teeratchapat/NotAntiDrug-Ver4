@@ -33,8 +33,8 @@ public class cameraController : MonoBehaviour
 
         cameraY = target.position.y+2;
 
-        Mathf.Clamp(cameraX, cameraXmin, cameraXmax);
-        Mathf.Clamp(cameraY, cameraYmin, cameraYmax);
+        cameraX = Mathf.Clamp(cameraX, cameraXmin, cameraXmax);
+        cameraY = Mathf.Clamp(cameraY, cameraYmin, cameraYmax);
 
         transform.position = new Vector3(cameraX, cameraY, transform.position.z);
         BG.position = new Vector3(cameraX, cameraY, BG.position.z);

@@ -16,5 +16,6 @@ public class AudioManager : MonoBehaviour
     public void PlaySfx(int soundToPlay)
     {
         sfx[soundToPlay].Play();
+        Debug.Log("PlaySFX : " + soundToPlay);
     }
 }

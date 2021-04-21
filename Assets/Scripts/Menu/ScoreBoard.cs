@@ -52,7 +52,7 @@ public class ScoreBoard : MonoBehaviour
 
     public void DisplayNextLevel()
     {
-        levelToDisplay++;
+        levelToDisplay += 1;
         if (levelToDisplay > 3)
         {
             levelToDisplay = 1;
@@ -62,7 +62,7 @@ public class ScoreBoard : MonoBehaviour
 
     public void DisplayPreviousLevel()
     {
-        levelToDisplay--;
+        levelToDisplay -= 1;
         if (levelToDisplay < 1)
         {
             levelToDisplay = 3;
@@ -111,5 +111,7 @@ public class ScoreBoard : MonoBehaviour
                 }
             }
         }
+
+        displayLevel_Text.text = levelToDisplay.ToString();
     }
 }

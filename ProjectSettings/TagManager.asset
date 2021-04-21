@@ -7,6 +7,7 @@ TagManager:
   - Platform
   - Enemy
   - Box
+  - CollectableObjec
   layers:
   - Default
   - TransparentFX
@@ -76,6 +77,9 @@ TagManager:
     locked: 0
   - name: Bullet
     uniqueID: 2322044927
+    locked: 0
+  - name: collectableObject
+    uniqueID: 1122989507
     locked: 0
   - name: ForegroundTile
     uniqueID: 1759179317

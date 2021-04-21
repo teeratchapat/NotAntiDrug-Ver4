@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: 3
   effectType: 0
-  enemyHp: -18
-  enemyMaxHp: 20
-  enemyDamage: 20
+  enemyMaxHp: 15
+  enemyDamage: 30
   scoreReward: 100
-  enemyDescription: 

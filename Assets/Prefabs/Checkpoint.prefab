@@ -97,8 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 944959865937200178}
-  checkPointOnSprite: {fileID: -704459396801619952, guid: e66da80b51ec3f342adb63c6ab9ed299, type: 3}
-  checkPointOffSprite: {fileID: 1982734929119423963, guid: e66da80b51ec3f342adb63c6ab9ed299, type: 3}
+  checkPointOnSprite: {fileID: 1982734929119423963, guid: e66da80b51ec3f342adb63c6ab9ed299, type: 3}
+  checkPointOffSprite: {fileID: -704459396801619952, guid: e66da80b51ec3f342adb63c6ab9ed299, type: 3}
 --- !u!61 &944959865937200176
 BoxCollider2D:
   m_ObjectHideFlags: 0

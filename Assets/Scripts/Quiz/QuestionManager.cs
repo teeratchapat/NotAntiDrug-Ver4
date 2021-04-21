@@ -76,6 +76,12 @@ public class QuestionManager : MonoBehaviour
     public int newHighscoreIndex = -1;
     [SerializeField] public List<HighScore> highScoreList;
 
+    [Header("Load data")]
+    [SerializeField] public List<HighScore> highScoreList_Level01;
+    [SerializeField] public List<HighScore> highScoreList_Level02;
+    [SerializeField] public List<HighScore> highScoreList_Level03;
+    [SerializeField] public int unlockToLevel;
+ 
     private void Start()
     {
         instance = this;
@@ -85,14 +91,34 @@ public class QuestionManager : MonoBehaviour
         if (questionLevel == 0)
         {
             Debug.Log("choose (int)questionLevel 1-3");
+        }else if (questionLevel == 1)
+        {
+            questions.Add(new Question("สารเสพติดประเภทกดประสาทได้แก่อะไรบ้าง?", "ยาบ้า กาว", "เห็ดขี้ควาย แอลเอสดี", "กาว ฝิ่น", "ช่อดอกกัญชา กาว", 3, 100));
+            questions.Add(new Question("อาการของคนเสพสารเสพติดประเภทกดประสาทมีอาการอย่างไร?", "ร่าเริง ช่างพูด", "อ่อนเพลีย ฟุ้งซ่าน", "หงุดหงิด คลุ้มคลั่ง", "ถูกทุกข้อ", 2, 100));
+            questions.Add(new Question("กาว และเหล้าเป็นสารเสพติดออกฤทธิ์อย่างไร?", "กดประสาท", "กระตุ้นประสาท", "ผสมผสาน", "หลอนประสาท", 1, 100));
+            questions.Add(new Question("กาว ฝิ่น ยาบ้า อะไรไม่ใช่สารเสพติดประเภทกดประสาท?", "กาว", "ฝิ่น", "ไม่ใช่ทั้ง ก และ ข", "ไม่มีข้อถูก", 4, 100));
+            questions.Add(new Question("เฮโรอีน จัดเป็นสารเสพติดที่สอดคล้องกับข้อใด?", "เป็นสารเสพติดประเภทที่ 1", "เป็นสารเสพติดประเภทที่ 2", "เป็นสารเสพติดประเภทที่ 3", "เป็นสารเสพติดประเภทที่ 4", 1, 100));
+            questions.Add(new Question("ฝิ่นออกฤทธิ์ต่อร่างกายอย่างไร?", "กดประสาท", "กระตุ้นประสาท", "ผสมผสาน", "หลอนประสาท", 4, 100));
+        }else if(questionLevel == 2)
+        {
+            questions.Add(new Question("สารเสพติดประเภทกระตุ้นประสาทได้แก่อะไรบ้าง?", "ยาบ้า กาว", "กาว ฝิ่น", "ยาบ้า ยาอี", "ช่อดอกกัญชา กาว",3,100));
+            questions.Add(new Question("อาการของคนเสพสารเสพติดประเภทกระตุ้นประสาทมีอาการอย่างไร?", "ร่าเริง ช่างพูด", "อ่อนเพลีย ฟุ้งซ่าน", "หงุดหงิด กระวนกระวาย", "ถูกทุกข้อ",3,100));
+            questions.Add(new Question("ใบกระท่อม ยาบ้าและยาอีเป็นสารเสพติดออกฤทธิ์อย่างไร?", "กดประสาท", "กระตุ้นประสาท", "ผสมผสาน", "หลอนประสาท",2,100));
+            questions.Add(new Question("โคเคน ฝิ่น ยาบ้า อะไรไม่ใช่สารเสพติดประเภทกระตุ้นประสาท?", "โคเคน", "ฝิ่น", "ไม่ใช่ทั้ง โคเคน และ ฝิ่น", "ไม่มีข้อถูก",2,100));
+            questions.Add(new Question("โคเคนออกฤทธิ์ต่อร่างกายอย่างไร?", "กระตุ้นประสาท", "กดประสาท", "ผสมผสาน", "หลอนประสาท",1,100));
+            questions.Add(new Question("ยาบ้า ยาอีจัดเป็นสารเสพติดที่สอดคล้องกับข้อใด?", "เป็นสารเสพติดประเภทที่ 1", "เป็นสารเสพติดประเภทที่ 2", "เป็นสารเสพติดประเภทที3", "เป็นสารเสพติดประเภทที่ 4",2,100));
+        } 
+        else if(questionLevel == 3)
+        {
+            questions.Add(new Question("เห็ดขี้ควายเป็นสารเสพติดที่ให้โทษ อย่างไร?", "กดประสาท", "กระตุ้นประสาท", "ผสมผสาน", "หลอนประสาท",4,100));
+            questions.Add(new Question("อาการของคนเสพสารเสพติดประเภทหลอนประสาทมีอาการอย่างไร?", "อารมณ์ดี ยิ้มแย่มสดใส", "หูแว่ว เห็นภาพหลอน", "ร่าเริง ช่างพูด", "ถูกทุกข้อ",2,100));
+            questions.Add(new Question("อาการของคนเสพสารเสพติดประเภทออกฤทธิ์ผสมผสานมีอาการอย่างไร?", "ร่าเริง ช่างพูด", "หัวเราะตลอดเวลา", "ง่วงนอน เซื่องซึม", "ถูกทุกข้อ",4,100));
+            questions.Add(new Question("ในเกมกระสุนประเภทออกฤทธิ์ผสมผสานใช้จัดการกับศัตรูอะไร?", "ช่อดอกกัญชา", "เหล้า", "ฝิ่น", "กาว",1,100));
+            questions.Add(new Question("สารเสพติดประเภทหลอนประสาทได้แก่อะไรบ้าง?", "เห็ดขี้ควาย กาว", "เห็ดขี้ควาย แอลเอสดี", "กาว ฝิ่น", "ช่อดอกกัญชา เห็ดขี้ควาย",2,100));
+            questions.Add(new Question("วิธีที่ดีที่สุดที่จะไม่ตกเป็นทาสยาเสพติดคือข้อใด?", "การป้องกันชุมชน,การป้องกันสังคม", "การป้องกันสังคม,การป้องกันตัวเอง", "การป้องกันชุมชน,การป้องกันสังคม,การป้องกันตนเอง", "การป้องกันชุมชน,การป้องกันตนเอง,การป้องกันครอบครัว",4,100));
+            questions.Add(new Question("เห็ดขี้ควาย จัดเป็นสารเสพติดที่สอดคล้องกับข้อใด?", "เป็นสารเสพติดประเภทที่ 1", "เป็นสารเสพติดประเภทที่ 2", "เป็นสารเสพติดประเภทที่ 3", "เป็นสารเสพติดประเภทที่ 4",3,100));
+            questions.Add(new Question("ช่อดอกกัญชา กับเห็ดขี้ควายเป็นสารเสพติดออกฤทธิ์ประเภทเดียวกันหรือไม่?", "เป็นสารเสพติดประเภทเดียวกัน", "เป็นสารเสพติดคนละประเภท", "เห็ดขี้ควายไม่ใช่สารเสพติด", "ไม่มีข้อถูก",2,100));
         }
-
-        questions.Add(new Question("สารเสพติดประเภทกดประสาทได้แก่อะไรบ้าง?", "ยาบ้า กาว", "เห็ดขี้ควาย แอลเอสดี", "กาว ฝิ่น", "ช่อดอกกัญชา กาว", 3, 100));
-        questions.Add(new Question("อาการของคนเสพสารเสพติดประเภทกดประสาทมีอาการอย่างไร?", "ร่าเริง ช่างพูด", "อ่อนเพลีย ฟุ้งซ่าน", "หงุดหงิด คลุ้มคลั่ง", "ถูกทุกข้อ", 2, 100));
-        questions.Add(new Question("กาว และเหล้าเป็นสารเสพติดออกฤทธิ์อย่างไร?", "กดประสาท", "กระตุ้นประสาท", "ผสมผสาน", "หลอนประสาท", 1, 100));
-        questions.Add(new Question("กาว ฝิ่น ยาบ้า อะไรไม่ใช่สารเสพติดประเภทกดประสาท?", "กาว", "ฝิ่น", "ไม่ใช่ทั้ง ก และ ข", "ไม่มีข้อถูก", 4, 100));
-        questions.Add(new Question("เฮโรอีน จัดเป็นสารเสพติดที่สอดคล้องกับข้อใด?", "เป็นสารเสพติดประเภทที่ 1", "เป็นสารเสพติดประเภทที่ 2", "เป็นสารเสพติดประเภทที่ 3", "เป็นสารเสพติดประเภทที่ 4", 1, 100));
-        questions.Add(new Question("ฝิ่นออกฤทธิ์ต่อร่างกายอย่างไร?", "กดประสาท", "กระตุ้นประสาท", "ผสมผสาน", "หลอนประสาท", 4, 100));
 
         for (int i = 0; i < questions.Count; i++)
         {
@@ -296,7 +322,11 @@ public class QuestionManager : MonoBehaviour
         summaryHolder.SetActive(true);
 
         //
-        if (highScoreList.Count < 5)
+        if(highScoreList == null)
+        {
+            InputNameBox.SetActive(true);
+        }
+        else if (highScoreList.Count < 5)
         {
             InputNameBox.SetActive(true);
         }
@@ -310,9 +340,6 @@ public class QuestionManager : MonoBehaviour
                 }
             }
         }
-
-        
-
     }
 
     public void loadNextScene()
@@ -334,7 +361,6 @@ public class QuestionManager : MonoBehaviour
 
         InputNameBox.SetActive(false);
         addNewHighscore();
-
     }
 
     public void LoadHighScore()
@@ -351,18 +377,10 @@ public class QuestionManager : MonoBehaviour
 
             fileStream.Close();
 
-            if(questionLevel == 1)
-            {
-                highScoreList = gameDataSave.highScoreSaveList_level01;
-            }
-            else if (questionLevel == 2)
-            {
-                highScoreList = gameDataSave.highScoreSaveList_level02;
-            }else if(questionLevel == 3)
-            {
-                highScoreList = gameDataSave.highScoreSaveList_level03;
-            }
-            
+            highScoreList_Level01 = gameDataSave.highScoreSaveList_level01;
+            highScoreList_Level02 = gameDataSave.highScoreSaveList_level02;
+            highScoreList_Level03 = gameDataSave.highScoreSaveList_level03;
+            unlockToLevel = gameDataSave.unlockToLevel;           
         }
         else
         {
@@ -403,11 +421,11 @@ public class QuestionManager : MonoBehaviour
         }
         else if (questionLevel == 2)
         {
-            gameDataSave.highScoreSaveList_level01 = highScoreList;
+            gameDataSave.highScoreSaveList_level02 = highScoreList;
         }
         else if (questionLevel == 3)
         {
-            gameDataSave.highScoreSaveList_level01 = highScoreList;
+            gameDataSave.highScoreSaveList_level03 = highScoreList;
         }
         
 

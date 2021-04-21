@@ -10,6 +10,7 @@ public class CollectCoin : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            FindObjectOfType<AudioManager>().PlaySfx(13);
             FindObjectOfType<scoreManager>().addScore(scoreToAdd);
             Destroy(gameObject);
         }

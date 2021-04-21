@@ -13,6 +13,7 @@ public class Checkpoint : MonoBehaviour
         Debug.Log("OnTriggerEnter2D");
         if (collision.CompareTag("Player"))
         {
+            FindObjectOfType<AudioManager>().PlaySfx(15);
             LevelManager.instance.DeactiveCheckPoint();
             spriteRenderer.sprite = checkPointOnSprite;
             LevelManager.instance.SetSpawnPoint(transform.position);

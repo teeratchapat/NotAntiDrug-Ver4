@@ -172,6 +172,7 @@ public class PlayerMovement : MonoBehaviour
         if (isGround)
         {
             playerRigidbody2d.velocity = new Vector2(playerRigidbody2d.velocity.x, jumpForce);
+            FindObjectOfType<AudioManager>().PlaySfx(7);
         }
         else
         {
@@ -179,6 +180,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 playerRigidbody2d.velocity = new Vector2(playerRigidbody2d.velocity.x, jumpForce);
                 isCanDoubleJump = false;
+                FindObjectOfType<AudioManager>().PlaySfx(7);
             }
         }
     }
@@ -226,6 +228,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             bulletInstance.GetComponent<BulletBehavior>().bulletDamage = BulletsController.instance.bullets[i].damagePower;
+            FindObjectOfType<AudioManager>().PlaySfx(18);
             BulletsUI.instance.updateBulletUI();
             nextFire = Time.time + fireRate;
         }
@@ -245,6 +248,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void knockback()
     {
+        FindObjectOfType<AudioManager>().PlaySfx(14);
         knockbackTimeCounter = knockbackTime;
         playerRigidbody2d.velocity = new Vector2(0f, knockbackPwr);
     }

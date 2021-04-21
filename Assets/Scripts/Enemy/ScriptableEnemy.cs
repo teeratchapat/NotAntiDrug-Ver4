@@ -15,7 +15,8 @@ public class ScriptableEnemy : ScriptableObject
         Cocaine,
         Ecstasy,
         Mitragynine,
-        MagicMushroom
+        MagicMushroom,
+        Marijuana,
     }
 
     public enum EffectType

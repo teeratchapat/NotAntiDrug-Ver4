@@ -39,11 +39,11 @@ public class BulletBehavior : MonoBehaviour
             {
                 OnHitEnemy(collision);
             }
-            else if (bulletsType == Bullets.BulletsType.antiHallucinogens && collision.GetComponent<Enemy>().scriptableEnemy.effectType == ScriptableEnemy.EffectType.hallucinogens)
+            else if (bulletsType == Bullets.BulletsType.antiStimulants && collision.GetComponent<Enemy>().scriptableEnemy.effectType == ScriptableEnemy.EffectType.stimulants)
             {
                 OnHitEnemy(collision);
             }
-            else if (bulletsType == Bullets.BulletsType.antiStimulants && collision.GetComponent<Enemy>().scriptableEnemy.effectType == ScriptableEnemy.EffectType.stimulants)
+            else if (bulletsType == Bullets.BulletsType.antiHallucinogens && collision.GetComponent<Enemy>().scriptableEnemy.effectType == ScriptableEnemy.EffectType.hallucinogens)
             {
                 OnHitEnemy(collision);
             }

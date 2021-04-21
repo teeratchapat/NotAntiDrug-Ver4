@@ -6,15 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/old/MainMenuScene.unity
+    path: Assets/Scenes/MainMenuScene.unity
     guid: 0c15f0c229be8a1438563894f5b6b411
   - enabled: 1
-    path: Assets/Scenes/old/sewerScene.unity
+    path: Assets/Scenes/sewerScene.unity
     guid: eebf7c5ba5f494a44b384a4059f1c31f
   - enabled: 1
-    path: Assets/Scenes/old/Quiz01Scene.unity
+    path: Assets/Scenes/Quiz01Scene.unity
     guid: 959de8aa9b4afe748a5e35225785921d
+  - enabled: 1
+    path: Assets/Scenes/factoryScene.unity
+    guid: b5c90c94310d6ad43a0945fe934b0c8d
+  - enabled: 1
+    path: Assets/Scenes/Quiz02Scene.unity
+    guid: 48ef57f7808b42e409793248b3ca86ff
+  - enabled: 1
+    path: Assets/Scenes/forestScene.unity
+    guid: 9249cca6e0012b14d9f87c5142449623
+  - enabled: 1
+    path: Assets/Scenes/Quiz03Scene.unity
+    guid: f3f2d682ff0e261409d15ebd13537efa
   m_configObjects: {}
