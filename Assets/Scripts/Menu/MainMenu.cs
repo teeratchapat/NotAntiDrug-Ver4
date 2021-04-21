@@ -69,7 +69,13 @@ public class MainMenu : MonoBehaviour
             selectLevel_01_Button.interactable = true;
             selectLevel_02_Button.interactable = true;
             selectLevel_03_Button.interactable = true;
-        }   
+        }
+        else
+        {
+            selectLevel_01_Button.interactable = true;
+            selectLevel_02_Button.interactable = true;
+            selectLevel_03_Button.interactable = true;
+        }
     }
 
     public void OpenScoreBoard()
@@ -94,16 +100,19 @@ public class MainMenu : MonoBehaviour
 
     public void StartLevel_01()
     {
+        scoreManager.currentScore = 0;
         SceneManager.LoadScene(scene_01);
     }
 
     public void StartLevel_02()
     {
+        scoreManager.currentScore = 0;
         SceneManager.LoadScene(scene_02);
     }
 
     public void StartLevel_03()
     {
+        scoreManager.currentScore = 0;
         SceneManager.LoadScene(scene_03);
     }
 

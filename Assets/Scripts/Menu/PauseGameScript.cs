@@ -24,17 +24,11 @@ public class PauseGameScript : MonoBehaviour
         {
             if (isPause)
             {
-                Time.timeScale = 1f;
-
-                pauseMenu.SetActive(false);
-                isPause = false;
+                unPauseGame();
             }
             else
             {
-                Time.timeScale = 0f;
-
-                pauseMenu.SetActive(true);
-                isPause = true;
+                pauseGame();
             }
 
         }
@@ -57,5 +51,21 @@ public class PauseGameScript : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("quitting game");
+    }
+
+    public void pauseGame()
+    {
+        Time.timeScale = 0f;
+
+        pauseMenu.SetActive(true);
+        isPause = true;
+    }
+
+    public void unPauseGame()
+    {
+        Time.timeScale = 1f;
+
+        pauseMenu.SetActive(false);
+        isPause = false;
     }
 }

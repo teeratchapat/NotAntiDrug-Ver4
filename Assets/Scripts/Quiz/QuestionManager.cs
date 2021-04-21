@@ -358,6 +358,7 @@ public class QuestionManager : MonoBehaviour
 
     public void loadNextScene()
     {
+        scoreManager.currentScore = 0;
         SceneManager.LoadScene(nextScene);
     }
 
