@@ -73,7 +73,7 @@ public class QuestionManager : MonoBehaviour
     [Header("Highscore")]
     public string filepath;
     public bool isHaveInsertHighscore = false;
-    public int newHighscoreIndex = -1;
+    public int newHighscoreIndex = 0;
     [SerializeField] public List<HighScore> highScoreList;
 
     [Header("Load data")]
@@ -98,7 +98,7 @@ public class QuestionManager : MonoBehaviour
             questions.Add(new Question("กาว และเหล้าเป็นสารเสพติดออกฤทธิ์อย่างไร?", "กดประสาท", "กระตุ้นประสาท", "ผสมผสาน", "หลอนประสาท", 1, 100));
             questions.Add(new Question("กาว ฝิ่น ยาบ้า อะไรไม่ใช่สารเสพติดประเภทกดประสาท?", "กาว", "ฝิ่น", "ไม่ใช่ทั้ง ก และ ข", "ไม่มีข้อถูก", 4, 100));
             questions.Add(new Question("เฮโรอีน จัดเป็นสารเสพติดที่สอดคล้องกับข้อใด?", "เป็นสารเสพติดประเภทที่ 1", "เป็นสารเสพติดประเภทที่ 2", "เป็นสารเสพติดประเภทที่ 3", "เป็นสารเสพติดประเภทที่ 4", 1, 100));
-            questions.Add(new Question("ฝิ่นออกฤทธิ์ต่อร่างกายอย่างไร?", "กดประสาท", "กระตุ้นประสาท", "ผสมผสาน", "หลอนประสาท", 4, 100));
+            questions.Add(new Question("ฝิ่นออกฤทธิ์ต่อร่างกายอย่างไร?", "กดประสาท", "กระตุ้นประสาท", "ผสมผสาน", "หลอนประสาท", 1, 100));
         }else if(questionLevel == 2)
         {
             questions.Add(new Question("สารเสพติดประเภทกระตุ้นประสาทได้แก่อะไรบ้าง?", "ยาบ้า กาว", "กาว ฝิ่น", "ยาบ้า ยาอี", "ช่อดอกกัญชา กาว",3,100));
@@ -321,7 +321,7 @@ public class QuestionManager : MonoBehaviour
         topBar.SetActive(false);
         summaryHolder.SetActive(true);
 
-        //
+        //check highscore
         if(highScoreList == null)
         {
             InputNameBox.SetActive(true);
@@ -340,6 +340,10 @@ public class QuestionManager : MonoBehaviour
                 }
             }
         }
+
+        //save without add new score
+        SaveGameData();
+
     }
 
     public void loadNextScene()
@@ -380,7 +384,20 @@ public class QuestionManager : MonoBehaviour
             highScoreList_Level01 = gameDataSave.highScoreSaveList_level01;
             highScoreList_Level02 = gameDataSave.highScoreSaveList_level02;
             highScoreList_Level03 = gameDataSave.highScoreSaveList_level03;
-            unlockToLevel = gameDataSave.unlockToLevel;           
+            unlockToLevel = gameDataSave.unlockToLevel;
+
+            if (questionLevel == 1)
+            {
+                highScoreList= highScoreList_Level01;
+            }
+            else if (questionLevel == 2)
+            {
+                highScoreList = highScoreList_Level02;
+            }
+            else if (questionLevel == 3)
+            {
+                highScoreList = highScoreList_Level03;
+            }
         }
         else
         {
@@ -388,70 +405,78 @@ public class QuestionManager : MonoBehaviour
         }
     }
 
+    public void SaveGameData()
+    {
+        unlockToLevel = questionLevel + 1;
+        GameDataSave gameDataSave = new GameDataSave();
+        gameDataSave.highScoreSaveList_level01 = highScoreList_Level01;
+        gameDataSave.highScoreSaveList_level02 = highScoreList_Level02;
+        gameDataSave.highScoreSaveList_level03 = highScoreList_Level03;
+        gameDataSave.unlockToLevel = unlockToLevel;
+
+        Debug.Log("HS_1 = " + gameDataSave.highScoreSaveList_level01.Count);
+
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
+
+        //FileStream fileStream = File.Create(Application.persistentDataPath + "/data.text");
+        FileStream fileStream = File.Create(Application.dataPath + filepath);
+
+        binaryFormatter.Serialize(fileStream, gameDataSave);
+
+        fileStream.Close();
+    }
+
     public void addNewHighscore()
     {
-        if (highScoreList.Count ==0)
+        if(highScoreList == null)
         {
             highScoreList.Add(new HighScore(playerName, scoreManager.currentScore));
+            Debug.Log("HS null");
+        }
+        else if (highScoreList.Count <5)
+        {
+            for (int i = 0; i < highScoreList.Count; i++)
+            {
+                if (highScoreList[i].score >= scoreManager.currentScore)
+                {
+                    newHighscoreIndex++;
+                }
+            }
+            
+            highScoreList.Insert(newHighscoreIndex, new HighScore(playerName, scoreManager.currentScore));
+            
+            Debug.Log("HS <5");
         }
         else
         {
             for (int i = 0; i < highScoreList.Count; i++)
             {
-                if (highScoreList[i].score <= scoreManager.currentScore)
+                if (highScoreList[i].score >= scoreManager.currentScore)
                 {
-                    isHaveInsertHighscore = true;
-                    newHighscoreIndex = i;
+                    newHighscoreIndex++;
                 }
             }
 
-            if (isHaveInsertHighscore)
-            {
-                highScoreList.Insert(newHighscoreIndex, new HighScore(playerName, scoreManager.currentScore));
-                highScoreList.RemoveAt(highScoreList.Count);
-            }
+            highScoreList.Insert(newHighscoreIndex, new HighScore(playerName, scoreManager.currentScore));
+            highScoreList.RemoveAt(highScoreList.Count - 1);
+
         }
 
         Debug.Log(highScoreList.Count);
 
-        GameDataSave gameDataSave = new GameDataSave();
         if (questionLevel == 1)
         {
-            gameDataSave.highScoreSaveList_level01 = highScoreList;
+            highScoreList_Level01 = highScoreList;
         }
         else if (questionLevel == 2)
         {
-            gameDataSave.highScoreSaveList_level02 = highScoreList;
+            highScoreList_Level02 = highScoreList;
         }
         else if (questionLevel == 3)
         {
-            gameDataSave.highScoreSaveList_level03 = highScoreList;
+            highScoreList_Level03 = highScoreList;
         }
-        
 
-        BinaryFormatter binaryFormatter = new BinaryFormatter();
-
-        //FileStream fileStream = File.Create(Application.persistentDataPath + "/data.text");
-        FileStream fileStream = File.Create(Application.dataPath + filepath);
-
-        binaryFormatter.Serialize(fileStream, gameDataSave);
-
-        fileStream.Close();
-
-    }
-
-    public void unlockLevel()
-    {
-        GameDataSave gameDataSave = new GameDataSave();
-        gameDataSave.unlockToLevel = questionLevel+1;
-
-        BinaryFormatter binaryFormatter = new BinaryFormatter();
-
-        //FileStream fileStream = File.Create(Application.persistentDataPath + "/data.text");
-        FileStream fileStream = File.Create(Application.dataPath + filepath);
-
-        binaryFormatter.Serialize(fileStream, gameDataSave);
-
-        fileStream.Close();
+        SaveGameData();
     }
 }

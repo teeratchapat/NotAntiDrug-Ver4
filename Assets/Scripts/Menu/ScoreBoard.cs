@@ -72,10 +72,16 @@ public class ScoreBoard : MonoBehaviour
 
     public void DisplayLevel()
     {
+        for(int i = 0; i < 5; i++)
+        {
+            rankText[i].text = "";
+            nameText[i].text = "";
+            scoreText[i].text = "";
+        }
 
         if (levelToDisplay == 1)
         {
-            if (highScoreSaveList_level01.Count != 0)
+            if (highScoreSaveList_level01 != null)
             {
                 for (int i = 0; i < highScoreSaveList_level01.Count; i++)
                 {
@@ -88,7 +94,7 @@ public class ScoreBoard : MonoBehaviour
         }
         else if (levelToDisplay == 2)
         {
-            if (highScoreSaveList_level02.Count != 0)
+            if (highScoreSaveList_level02 != null)
             {
                 for (int i = 0; i < highScoreSaveList_level02.Count; i++)
                 {
@@ -101,7 +107,7 @@ public class ScoreBoard : MonoBehaviour
         }
         else if (levelToDisplay == 3)
         {
-            if (highScoreSaveList_level03.Count != 0)
+            if (highScoreSaveList_level03 != null)
             {
                 for (int i = 0; i < highScoreSaveList_level03.Count; i++)
                 {
