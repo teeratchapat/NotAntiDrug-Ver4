@@ -90,6 +90,7 @@ public class Player : MonoBehaviour
             if (currentHP <= 0)
             {
                 currentHP = 0;
+                FindObjectOfType<AudioManager>().PlaySfx(9);
                 FindObjectOfType<HPbarUI>().updateHpUI();
                 FindObjectOfType<scoreManager>().reduceScore(scoreToReduce);
                 //death

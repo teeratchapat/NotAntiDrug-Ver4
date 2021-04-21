@@ -1235,8 +1235,8 @@ MonoBehaviour:
   time: 120
   timeToNotice: 30
   timeLeft: 0
-  scoreToAdd: 100
-  scoreToRedure: 100
+  scoreToAdd: 500
+  scoreToRedure: 0
   isWait: 0
   filepath: /GameDataSave
   isHaveInsertHighscore: 0

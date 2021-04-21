@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Marijuana
   m_EditorClassIdentifier: 
   enemyName: 9
-  effectType: 1
+  effectType: 3
   enemyMaxHp: 15
   enemyDamage: 30
   scoreReward: 100

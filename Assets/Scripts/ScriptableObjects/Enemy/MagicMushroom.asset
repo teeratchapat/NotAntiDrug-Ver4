@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MagicMushroom
   m_EditorClassIdentifier: 
   enemyName: 8
-  effectType: 3
+  effectType: 1
   enemyMaxHp: 15
   enemyDamage: 30
   scoreReward: 100

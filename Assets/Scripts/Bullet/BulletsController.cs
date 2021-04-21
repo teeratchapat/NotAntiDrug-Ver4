@@ -26,9 +26,9 @@ public class BulletsController : MonoBehaviour
     {
         instance = this;
         
-        antiDepressants = new Bullets(Bullets.BulletsType.antiDepressants, "ประเภทกดประสาท", 50, 5, "Depressants", sprites[0], bulletsPrefab[0]);;
-        antiHallucinogens = new Bullets(Bullets.BulletsType.antiHallucinogens, "ประเภทหลอนประสาท", 50, 5, "Hallucinogens", sprites[1], bulletsPrefab[1]);
-        antiStimulants = new Bullets(Bullets.BulletsType.antiStimulants, "ประเภทกระตุ้นประสาท", 50, 5, "", sprites[2], bulletsPrefab[2]);
+        antiDepressants = new Bullets(Bullets.BulletsType.antiDepressants, "ประเภทกดประสาท", 50, 5, "Depressants", sprites[0], bulletsPrefab[0]);
+        antiStimulants = new Bullets(Bullets.BulletsType.antiStimulants, "ประเภทกระตุ้นประสาท", 50, 5, "", sprites[1], bulletsPrefab[1]);
+        antiHallucinogens = new Bullets(Bullets.BulletsType.antiHallucinogens, "ประเภทหลอนประสาท", 50, 5, "Hallucinogens", sprites[2], bulletsPrefab[2]);
         antiMultipleEffect = new Bullets(Bullets.BulletsType.antiMultipleEffect, "ประเภทออกฤทษ์ผสมผสาน", 50, 5, "", sprites[3], bulletsPrefab[3]);
         
         if (LevelManager.instance.currentLv == 1)

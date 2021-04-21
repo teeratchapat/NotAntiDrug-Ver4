@@ -383,6 +383,7 @@ MonoBehaviour:
   Ecstasy: {fileID: 6978157680021471861, guid: ee13b360b73f04646b57fef303fd04be, type: 3}
   Mitragynine: {fileID: 267462794202540835, guid: 46feaf5414a87ca46a90163bbd90127f, type: 3}
   MagicMushroom: {fileID: 1064304696418719163, guid: 636619bb28857ed49a890811c462f651, type: 3}
+  Marijuana: {fileID: 0}
   enemySpawnRate:
   - enemyName: 1
     spawnRate: 0.5
