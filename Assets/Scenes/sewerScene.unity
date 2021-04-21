@@ -87598,16 +87598,25 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
       propertyPath: dialogues.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
       propertyPath: dialogues.Array.data[0].quote
-      value: "\u0E19\u0E47\u0E2D\u0E15\u0E08\u0E33\u0E40\u0E1B\u0E47\u0E19\u0E15\u0E49\u0E2D\u0E07\u0E15\u0E2D\u0E1A\u0E04\u0E33\u0E16\u0E32\u0E21\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E08\u0E31\u0E14\u0E01\u0E32\u0E23\u0E01\u0E31\u0E1A\u0E1A\u0E2D\u0E2A
-        \u0E16\u0E49\u0E32\u0E15\u0E2D\u0E1A\u0E16\u0E39\u0E01\u0E19\u0E47\u0E2D\u0E15\u0E08\u0E30\u0E44\u0E14\u0E49\u0E23\u0E31\u0E1A\u0E04\u0E30\u0E41\u0E19\u0E19
-        \u0E16\u0E49\u0E32\u0E1C\u0E34\u0E14\u0E19\u0E47\u0E2D\u0E15\u0E08\u0E30\u0E40\u0E2A\u0E35\u0E22\u0E04\u0E30\u0E41\u0E19\u0E19\r\n"
+      value: "\u0E40\u0E01\u0E48\u0E07\u0E21\u0E32\u0E19\u0E47\u0E2D\u0E15\u0E17\u0E35\u0E48\u0E40\u0E02\u0E49\u0E32\u0E21\u0E32\u0E16\u0E36\u0E07\u0E15\u0E23\u0E07\u0E19\u0E35\u0E49
+        \u0E42\u0E14\u0E22\u0E19\u0E47\u0E2D\u0E15\u0E08\u0E33\u0E40\u0E1B\u0E47\u0E19\u0E15\u0E49\u0E2D\u0E07\u0E15\u0E2D\u0E1A\u0E04\u0E33\u0E16\u0E32\u0E21\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E08\u0E31\u0E14\u0E01\u0E32\u0E23\u0E01\u0E31\u0E1A\u0E1A\u0E2D\u0E2A 
+        \n\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
+      propertyPath: dialogues.Array.data[1].quote
+      value: "\u0E42\u0E14\u0E22\u0E16\u0E49\u0E32\u0E15\u0E2D\u0E1A\u0E16\u0E39\u0E01\u0E19\u0E47\u0E2D\u0E15\u0E08\u0E30\u0E44\u0E14\u0E49\u0E23\u0E31\u0E1A\u0E04\u0E30\u0E41\u0E19\u0E19
+        \u0E16\u0E49\u0E32\u0E1C\u0E34\u0E14\u0E19\u0E47\u0E2D\u0E15\u0E08\u0E30\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49\u0E23\u0E31\u0E1A\u0E04\u0E30\u0E41\u0E19\u0E19\u0E19\u0E31\u0E49\u0E19\u0E40\u0E2D\u0E07\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
       propertyPath: dialogues.Array.data[0].speaker
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
+      propertyPath: dialogues.Array.data[1].speaker
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6182036987780075499, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
@@ -116979,7 +116988,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
       propertyPath: dialogues.Array.size
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
       propertyPath: dialogues.Array.data[0].quote
@@ -116989,13 +116998,31 @@ PrefabInstance:
     - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
       propertyPath: dialogues.Array.data[1].quote
       value: "\u0E42\u0E14\u0E22\u0E08\u0E30\u0E21\u0E35\u0E1B\u0E35\u0E28\u0E32\u0E08\u0E1B\u0E23\u0E30\u0E40\u0E20\u0E17\u0E01\u0E14\u0E1B\u0E23\u0E30\u0E2A\u0E32\u0E17
-        \u0E42\u0E14\u0E22\u0E17\u0E35\u0E48\u0E40\u0E23\u0E32\u0E08\u0E30\u0E40\u0E08\u0E2D\u0E21\u0E35
-        \u0E1D\u0E34\u0E48\u0E19 \u0E40\u0E2E\u0E42\u0E23\u0E2D\u0E35\u0E19 \u0E01\u0E32\u0E27
-        \u0E41\u0E25\u0E30\u0E40\u0E2B\u0E25\u0E49\u0E32 \u0E40\u0E1B\u0E47\u0E19\u0E15\u0E49\u0E19
-        \u0E17\u0E33\u0E43\u0E2B\u0E49\u0E1C\u0E39\u0E49\u0E40\u0E2A\u0E1E\u0E15\u0E34\u0E14\u0E21\u0E35
+        \u0E2B\u0E23\u0E37\u0E2D\u0E2A\u0E32\u0E23\u0E40\u0E2A\u0E1E\u0E15\u0E34\u0E14\u0E1B\u0E23\u0E30\u0E40\u0E20\u0E17\u0E17\u0E35\u0E48
+        1 \u0E44\u0E14\u0E49\u0E41\u0E01\u0E48 \u0E1D\u0E34\u0E48\u0E19 \u0E40\u0E2E\u0E42\u0E23\u0E2D\u0E35\u0E19
+        \u0E01\u0E32\u0E27 \u0E41\u0E25\u0E30\u0E40\u0E2B\u0E25\u0E49\u0E32 \u0E40\u0E1B\u0E47\u0E19\u0E15\u0E49\u0E19 "
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
+      propertyPath: dialogues.Array.data[2].quote
+      value: "\u0E42\u0E14\u0E22\u0E16\u0E49\u0E32\u0E40\u0E2A\u0E1E\u0E22\u0E32\u0E08\u0E30\u0E17\u0E33\u0E43\u0E2B\u0E49\u0E1C\u0E39\u0E49\u0E40\u0E2A\u0E1E\u0E15\u0E34\u0E14\u0E22\u0E32\u0E21\u0E35
         \u0E23\u0E48\u0E32\u0E07\u0E01\u0E32\u0E22\u0E0B\u0E39\u0E1A\u0E0B\u0E35\u0E14
         \u0E1C\u0E2D\u0E21\u0E40\u0E2B\u0E25\u0E37\u0E2D\u0E07 \u0E2D\u0E48\u0E2D\u0E19\u0E40\u0E1E\u0E25\u0E35\u0E22
         \u0E1F\u0E38\u0E49\u0E07\u0E0B\u0E48\u0E32\u0E19 \u0E2D\u0E32\u0E23\u0E21\u0E13\u0E4C\u0E40\u0E1B\u0E25\u0E35\u0E48\u0E22\u0E19\u0E41\u0E1B\u0E25\u0E07\u0E44\u0E14\u0E49\u0E07\u0E48\u0E32\u0E22"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
+      propertyPath: dialogues.Array.data[3].quote
+      value: "\u0E43\u0E19\u0E01\u0E32\u0E23\u0E40\u0E25\u0E48\u0E19\u0E40\u0E01\u0E21\u0E1C\u0E39\u0E49\u0E40\u0E25\u0E48\u0E19\u0E2A\u0E32\u0E21\u0E32\u0E23\u0E16
+        \u0E40\u0E14\u0E34\u0E19\u0E44\u0E1B\u0E17\u0E32\u0E07\u0E0B\u0E49\u0E32\u0E22
+        \u0E42\u0E14\u0E22\u0E01\u0E32\u0E23\u0E01\u0E14\u0E1B\u0E38\u0E48\u0E21
+        (A) \u0E40\u0E14\u0E34\u0E19\u0E44\u0E1B\u0E17\u0E32\u0E07\u0E02\u0E27\u0E32\u0E42\u0E14\u0E22\u0E01\u0E32\u0E23\u0E01\u0E14\u0E1B\u0E38\u0E48\u0E21
+        (D) \u0E01\u0E14 (Space bar) \u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E01\u0E23\u0E30\u0E42\u0E14\u0E14"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
+      propertyPath: dialogues.Array.data[4].quote
+      value: "\u0E01\u0E14 (F) \u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E04\u0E38\u0E22 \u0E01\u0E14\u0E04\u0E25\u0E34\u0E01\u0E02\u0E27\u0E32\u0E2B\u0E23\u0E37\u0E2D\u0E1B\u0E38\u0E48\u0E21
+        (ALT) \u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E40\u0E1B\u0E25\u0E35\u0E48\u0E22\u0E19\u0E01\u0E23\u0E30\u0E2A\u0E38\u0E19
+        \u0E41\u0E25\u0E30 \u0E04\u0E25\u0E34\u0E01\u0E0B\u0E49\u0E32\u0E22\u0E2B\u0E23\u0E37\u0E2D\u0E1B\u0E38\u0E48\u0E21
+        (CTRL) \u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E42\u0E08\u0E21\u0E15\u0E35"
       objectReference: {fileID: 0}
     - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
       propertyPath: dialogues.Array.data[0].speaker
@@ -117006,7 +117033,31 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
+      propertyPath: dialogues.Array.data[2].speaker
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
+      propertyPath: dialogues.Array.data[3].speaker
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
+      propertyPath: dialogues.Array.data[4].speaker
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
       propertyPath: dialogues.Array.data[1].insertImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 03e07ad88a85c044a8a125c0a700f989, type: 3}
+    - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
+      propertyPath: dialogues.Array.data[2].insertImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 03e07ad88a85c044a8a125c0a700f989, type: 3}
+    - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
+      propertyPath: dialogues.Array.data[3].insertImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 03e07ad88a85c044a8a125c0a700f989, type: 3}
+    - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
+      propertyPath: dialogues.Array.data[4].insertImage
       value: 
       objectReference: {fileID: 21300000, guid: 03e07ad88a85c044a8a125c0a700f989, type: 3}
     - target: {fileID: 6182036987780075499, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
@@ -117145,6 +117196,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 48221997}
+    - target: {fileID: 8770496183350680836, guid: 3edb2f1f01adb284f9a58db4231e7cbd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8770496183359484279, guid: 3edb2f1f01adb284f9a58db4231e7cbd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -117153,6 +117208,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 48221997}
+    - target: {fileID: 8770496184352324943, guid: 3edb2f1f01adb284f9a58db4231e7cbd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0d918987e24685d498ed2df0ee68736d, type: 3}
+    - target: {fileID: 8770496184352324943, guid: 3edb2f1f01adb284f9a58db4231e7cbd, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770496184352324943, guid: 3edb2f1f01adb284f9a58db4231e7cbd, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770496184352324943, guid: 3edb2f1f01adb284f9a58db4231e7cbd, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8770496184608785614, guid: 3edb2f1f01adb284f9a58db4231e7cbd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -117161,6 +117232,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 48221997}
+    - target: {fileID: 8770496184832048173, guid: 3edb2f1f01adb284f9a58db4231e7cbd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2a57a5b3c4eb6ab41849f013317f728f, type: 3}
+    - target: {fileID: 8770496184832048173, guid: 3edb2f1f01adb284f9a58db4231e7cbd, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770496184832048173, guid: 3edb2f1f01adb284f9a58db4231e7cbd, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770496184832048173, guid: 3edb2f1f01adb284f9a58db4231e7cbd, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8770496184832048175, guid: 3edb2f1f01adb284f9a58db4231e7cbd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8770496185099386370, guid: 3edb2f1f01adb284f9a58db4231e7cbd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

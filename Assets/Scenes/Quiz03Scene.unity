@@ -451,7 +451,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &77295277
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1225,7 +1225,7 @@ MonoBehaviour:
   nextScene: 
   mainMenuScene: MainMenuMenu
   defaultButtonColor: {r: 1, g: 1, b: 1, a: 1}
-  CorrectButtonColor: {r: 0.8018868, g: 0.7665715, b: 0.26099145, a: 1}
+  CorrectButtonColor: {r: 0.30588236, g: 0.8, b: 0.26099145, a: 1}
   questionLevel: 3
   tempString: 
   keyIndex: 0
@@ -1261,7 +1261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &433358262
 Transform:
   m_ObjectHideFlags: 0
@@ -3908,7 +3908,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1314318403
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6022,7 +6022,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2002057235
 RectTransform:
   m_ObjectHideFlags: 0
