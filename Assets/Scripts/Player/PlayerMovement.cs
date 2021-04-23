@@ -98,12 +98,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetButtonDown("Fire2"))
             {
                 changeBullets();
-            }
-
-            if (Input.GetKeyDown(KeyCode.X))
-            {
-                knockback();
-            }
+            } 
         }
     }
 

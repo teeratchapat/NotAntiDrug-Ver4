@@ -626,8 +626,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0E14\u0E31\u0E07\u0E19\u0E31\u0E49\u0E19 \u0E14.\u0E15.\u0E2A\u0E42\u0E15\u0E19\u0E08\u0E36\u0E07\u0E44\u0E14\u0E49\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E2B\u0E38\u0E48\u0E19\u0E22\u0E19\u0E15\u0E23\u0E4C\u0E02\u0E36\u0E49\u0E19
-    \u0E17\u0E35\u0E48\u0E08\u0E30\u0E21\u0E32\u0E01\u0E33\u0E08\u0E31\u0E14\u0E40\u0E2B\u0E25\u0E49\u0E32\u0E1A\u0E23\u0E23\u0E14\u0E32\u0E1B\u0E35\u0E28\u0E32\u0E08\u0E22\u0E32\u0E40\u0E2A\u0E1E\u0E15\u0E34\u0E14\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E43\u0E2B\u0E49\u0E40\u0E21\u0E37\u0E2D\u0E07\u0E01\u0E25\u0E31\u0E1A\u0E21\u0E32\u0E2A\u0E07\u0E1A\u0E2A\u0E38\u0E02\u0E2D\u0E35\u0E01\u0E04\u0E23\u0E31\u0E49\u0E07"
+  m_Text: "\u0E14\u0E31\u0E07\u0E19\u0E31\u0E49\u0E19 \u0E14.\u0E23.\u0E2A\u0E42\u0E15\u0E19\u0E08\u0E36\u0E07\u0E44\u0E14\u0E49\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E2B\u0E38\u0E48\u0E19\u0E22\u0E19\u0E15\u0E23\u0E4C\u0E02\u0E36\u0E49\u0E19
+    \u0E17\u0E35\u0E48\u0E08\u0E30\u0E21\u0E32\u0E01\u0E33\u0E08\u0E31\u0E14\u0E40\u0E2B\u0E25\u0E48\u0E32\u0E1A\u0E23\u0E23\u0E14\u0E32\u0E1B\u0E35\u0E28\u0E32\u0E08\u0E22\u0E32\u0E40\u0E2A\u0E1E\u0E15\u0E34\u0E14\n\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E43\u0E2B\u0E49\u0E40\u0E21\u0E37\u0E2D\u0E07\u0E01\u0E25\u0E31\u0E1A\u0E21\u0E32\u0E2A\u0E07\u0E1A\u0E2A\u0E38\u0E02\u0E2D\u0E35\u0E01\u0E04\u0E23\u0E31\u0E49\u0E07"
 --- !u!222 &64770499
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -88352,7 +88352,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0E42\u0E14\u0E22\u0E43\u0E2B\u0E49\u0E0A\u0E37\u0E48\u0E2D\u0E2B\u0E38\u0E48\u0E19\u0E22\u0E19\u0E15\u0E23\u0E4C\u0E15\u0E31\u0E27\u0E19\u0E35\u0E49\u0E27\u0E48\u0E32\u201D\u0E19\u0E47\u0E2D\u0E15\u201D"
+  m_Text: "\u0E42\u0E14\u0E22\u0E43\u0E2B\u0E49\u0E0A\u0E37\u0E48\u0E2D\u0E2B\u0E38\u0E48\u0E19\u0E22\u0E19\u0E15\u0E4C\u0E15\u0E31\u0E27\u0E19\u0E35\u0E49\u0E27\u0E48\u0E32\u201D\u0E19\u0E47\u0E2D\u0E15\u201D"
 --- !u!222 &877423068
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -91126,7 +91126,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u0E43\u0E19\u0E1B\u0E35\u0E04.\u0E28.2222 \u0E44\u0E14\u0E49\u0E40\u0E01\u0E34\u0E14\u0E2B\u0E32\u0E22\u0E22\u0E19\u0E30\u0E04\u0E23\u0E31\u0E49\u0E07\u0E43\u0E2B\u0E0D\u0E48\u0E02\u0E36\u0E49\u0E19\u0E40\u0E21\u0E37\u0E48\u0E2D\u0E43\u0E19\u0E40\u0E21\u0E37\u0E2D\u0E07
-    earthland \u0E19\u0E31\u0E49\u0E19\u0E44\u0E14\u0E49\u0E16\u0E39\u0E01\u0E22\u0E36\u0E14\u0E04\u0E23\u0E2D\u0E07\u0E42\u0E14\u0E22\u0E40\u0E2B\u0E25\u0E49\u0E32\u0E1B\u0E35\u0E28\u0E32\u0E08\u0E22\u0E32\u0E40\u0E2A\u0E1E\u0E15\u0E34\u0E14\u0E17\u0E33\u0E43\u0E2B\u0E49\u0E43\u0E19\u0E40\u0E21\u0E37\u0E2D\u0E07\u0E40\u0E01\u0E34\u0E14\u0E04\u0E27\u0E32\u0E21\u0E27\u0E38\u0E48\u0E19\u0E27\u0E32\u0E22"
+    earthland \u0E19\u0E31\u0E49\u0E19\u0E44\u0E14\u0E49\u0E16\u0E39\u0E01\u0E22\u0E36\u0E14\u0E04\u0E23\u0E2D\u0E07\u0E42\u0E14\u0E22\n\u0E40\u0E2B\u0E25\u0E48\u0E32\u0E1B\u0E35\u0E28\u0E32\u0E08\u0E22\u0E32\u0E40\u0E2A\u0E1E\u0E15\u0E34\u0E14\u0E17\u0E33\u0E43\u0E2B\u0E49\n\u0E43\u0E19\u0E40\u0E21\u0E37\u0E2D\u0E07\u0E40\u0E01\u0E34\u0E14\u0E04\u0E27\u0E32\u0E21\u0E27\u0E38\u0E48\u0E19\u0E27\u0E32\u0E22"
 --- !u!222 &1549714890
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -92641,7 +92641,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 286f0bf266664034fbf7fd7e06c3f4c0, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.557
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -117979,7 +117979,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4831756200746265734, guid: cea556993c5d36b409a49e0380c17220, type: 3}
       propertyPath: m_Volume
-      value: 0.48
+      value: 0.403
+      objectReference: {fileID: 0}
+    - target: {fileID: 5415158987433380059, guid: cea556993c5d36b409a49e0380c17220, type: 3}
+      propertyPath: m_Volume
+      value: 0.403
       objectReference: {fileID: 0}
     - target: {fileID: 8731479420354068506, guid: cea556993c5d36b409a49e0380c17220, type: 3}
       propertyPath: m_RootOrder
@@ -118053,7 +118057,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
       propertyPath: dialogues.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
       propertyPath: dialogues.Array.data[0].quote
@@ -118090,6 +118094,11 @@ PrefabInstance:
         (CTRL) \u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E42\u0E08\u0E21\u0E15\u0E35"
       objectReference: {fileID: 0}
     - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
+      propertyPath: dialogues.Array.data[5].quote
+      value: "\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E08\u0E31\u0E14\u0E01\u0E32\u0E23\u0E2A\u0E32\u0E23\u0E40\u0E2A\u0E1E\u0E15\u0E34\u0E14\u0E1B\u0E23\u0E30\u0E40\u0E20\u0E17\u0E01\u0E14\u0E1B\u0E23\u0E30\u0E2A\u0E32\u0E17
+        \u0E19\u0E47\u0E2D\u0E15\u0E08\u0E30\u0E15\u0E49\u0E2D\u0E07\u0E43\u0E0A\u0E49\u0E01\u0E23\u0E30\u0E2A\u0E38\u0E19\u0E2A\u0E35\u0E40\u0E40\u0E14\u0E07\u0E43\u0E19\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E01\u0E32\u0E23"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
       propertyPath: dialogues.Array.data[0].speaker
       value: 1
       objectReference: {fileID: 0}
@@ -118110,6 +118119,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
+      propertyPath: dialogues.Array.data[5].speaker
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
       propertyPath: dialogues.Array.data[1].insertImage
       value: 
       objectReference: {fileID: 21300000, guid: 03e07ad88a85c044a8a125c0a700f989, type: 3}
@@ -118123,6 +118136,10 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 03e07ad88a85c044a8a125c0a700f989, type: 3}
     - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
       propertyPath: dialogues.Array.data[4].insertImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 03e07ad88a85c044a8a125c0a700f989, type: 3}
+    - target: {fileID: 6182036987780075498, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
+      propertyPath: dialogues.Array.data[5].insertImage
       value: 
       objectReference: {fileID: 21300000, guid: 03e07ad88a85c044a8a125c0a700f989, type: 3}
     - target: {fileID: 6182036987780075499, guid: 54636deb833dffe4bb051fe3370375aa, type: 3}
